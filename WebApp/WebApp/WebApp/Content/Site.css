@@ -1,0 +1,24 @@
+﻿/*Permission Styles*/
+.permission_group {
+    margin-bottom: 15px;
+    background: #f4f5f7;
+    padding: 15px;
+}
+
+    .permission_group .checkbox-inline {
+        margin-bottom: 10px;
+    }
+    .checkbox-inline {
+        font-size: 1.0rem;
+    }
+    .permission_group h5 {
+        margin: 0;
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+.label_group {
+    border-bottom: solid 1px #eaeaea;
+    padding-bottom: 5px;
+    margin-bottom: 0;
+}

@@ -1,0 +1,102 @@
+﻿@model MenuItemsViewModels
+@{
+    ViewBag.Title = "Menu";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header m-b-md">
+            <h5 class="card-header-text">Menu</h5>
+        </div>
+        <div class="card-block">
+            @using (Html.BeginForm())
+            {
+                <div class="row form">
+                    <div class="col-md-9">
+                        @Html.HiddenFor(model => model.MenuItem.MenuItemId)
+                        @Html.HiddenFor(model => model.MenuItem.IsActive)
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label class="control-label">Resource Group</label>
+                                    @Html.DropDownListFor(model => model.MenuItem.GroupId, new SelectList(Model.MenuItemsGroupList, "MenuItemId", "MenuItemName"), "-- Select Group --", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.MenuItem.GroupId, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-2">
+                                <div class="form-group m-t-lg">
+                                    <label class="checkbox">
+                                        @Html.EditorFor(model => model.MenuItem.IsParent, new { htmlAttributes = new { @class = "" } })
+                                        @Html.ValidationMessageFor(model => model.MenuItem.IsParent, "", new { @class = "text-danger" })
+                                        <span class="m-l-md">Is Parent</span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6 clear-both">
+                                <div class="form-group">
+                                    <label class="control-label">Resource Name <span class="required">*</span></label>
+                                    @Html.EditorFor(model => model.MenuItem.MenuItemName, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MenuItem.MenuItemName, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-3 clear-both">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MenuItem.IconClass, htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.MenuItem.IconClass, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MenuItem.IconClass, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                            <div class="col-md-3">
+                                <div class="form-group">
+                                    @Html.LabelFor(model => model.MenuItem.SortOrder, htmlAttributes: new { @class = "control-label" })
+                                    @Html.EditorFor(model => model.MenuItem.SortOrder, new { htmlAttributes = new { @class = "form-control" } })
+                                    @Html.ValidationMessageFor(model => model.MenuItem.SortOrder, "", new { @class = "text-danger" })
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="form-btns col-md-12">
+                        <div class="tabs-buttons m-t-lg">
+                            <input type="submit" value="Save" class="btn btn-primary btn-sm" />
+                            <a href="/Menu/Index/0/@Model." class="btn btn-sm btn-white">Cancel</a>
+                        </div>
+                    </div>
+                </div>
+            }
+            @if (Model != null && Model.MenuItemsList != null && Model.MenuItemsList.Count() > 0)
+            {
+                <table class="table table-hover snap-primary-table">
+                    <thead>
+                        <tr>
+                            <th>Resource Name</th>
+                            <th>Group Name</th>
+                            <th>Icon Class</th>
+                            <th>Position</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.MenuItemsList)
+                {
+                            <tr>
+                                <td>@item.MenuItemName</td>
+                                <td>@item.GroupName</td>
+                                <td>@item.IconClass</td>
+                                <td>@item.SortOrder</td>
+                                <td>
+                                    <a class="grid_action" href="@Url.Action("Index", "Menu", new { id = item.MenuItemId })" title="Edit"><i class="fa fa-edit"></i> </a>|
+                                    <a class="grid_action" href="@Url.Action("Index", "Permissions", new { rgid = item.GroupId, rid = item.MenuItemId, id = string.Empty })" title="Permissions"><i class="fa fa-key"></i> </a>|
+                                    <a class="grid_action" href="@Url.Action("Delete", "Menu", new { id = item.MenuItemId })" onclick="return confirm('Are you sure you want to delete Resource?');"
+                                       title="Delete"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            }
+        </div>
+    </div>
+</div>

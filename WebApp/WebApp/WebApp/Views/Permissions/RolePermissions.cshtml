@@ -1,0 +1,107 @@
+﻿﻿@model IEnumerable<PermissionsListViewModels>
+@{
+    ViewBag.Title = "Permission";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+<link href="~/Content/Site.css" rel="stylesheet" />
+<div class="col-md-12">
+    <div class="card all-permissions">
+        <div class="card-header m-b-md">
+            <h5 class="card-header-text">Permission</h5>
+            <label class="checkbox-inline m-t-sm f-right">
+                <input type="checkbox" class="check-all" value="" /> Select All Checkboxes
+            </label>
+        </div>
+        <div class="row card-block">
+            @foreach (var list in Model)
+            {
+                <div class="col-md-12 group">
+                    <h3 class="label_group">
+                        @list.MenuGroup.MenuItem.MenuItemName
+                        <label class="checkbox-inline m-t-sm f-right">
+                            <input type="checkbox" class="check-group" value=""> Select All
+                        </label>
+                    </h3>
+                    @if (list.MenuGroup.PagePermissions.Count() > 0)
+                    {
+                        <div class="permission_group">
+                            <h5> @list.MenuGroup.MenuItem.MenuItemName </h5>
+                            <div class="row">
+                                @foreach (var permission in list.MenuGroup.PagePermissions)
+                                {
+                                    <div class="col-md-3">
+                                        <label class="checkbox-inline">
+                                            <input type="checkbox" value="@permission.PermissionId" checked="@permission.CanAccess" /> <span> @permission.PermissionText </span>
+                                        </label>
+                                    </div>
+                                }
+                            </div>
+                        </div>
+                    }
+                    @foreach (var menu in list.MenuItemsList)
+                    {
+                        if (menu.PagePermissions.Count() > 0)
+                        {
+                            <div class="permission_group">
+                                <h5> @menu.MenuItem.MenuItemName </h5>
+                                <div class="row">
+                                    @foreach (var permission in menu.PagePermissions)
+                                    {
+                                        <div class="col-md-3">
+                                            <label class="checkbox-inline">
+                                                <input type="checkbox" value="@permission.PermissionId" checked="@permission.CanAccess" /> <span> @permission.PermissionText </span>
+                                            </label>
+                                        </div>
+                                    }
+                                </div>
+                            </div>
+                        }
+                    }
+                </div>
+            }
+            <div class="col-md-12">
+                <div class="form-group mb0">
+                    <button id="save" class="btn btn-sm btn-primary" type="button"><strong>Save</strong></button>
+                    <button class="btn btn-sm btn-white" type="submit"><strong>Cancel</strong></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $('#save').click(function () {
+        var allVals = [];
+        $("input:checkbox:checked").each(function () {
+            if($(this).hasClass("check-all") || $(this).hasClass("check-group"))
+            {
+            }else{
+                allVals.push($(this).val());
+            }
+        });
+        var values = $(this).serialize();
+
+        $.ajax({
+            url: '@Url.Action("SaveRolePermissions")',
+            type: "post",
+            data: { values: allVals , id:@ViewContext.RouteData.Values["id"]},
+            success: function (response) {
+                // you will get response from your php page (what you echo or print)
+
+            },
+            error: function (jqXHR, textStatus, errorThrown) {
+                console.log(textStatus, errorThrown);
+            }
+        });
+    });
+
+    $('.check-all').on("click",function(){
+        $('.all-permissions').find(':checkbox').prop('checked', this.checked);
+    });
+
+    $('.check-group').on("click",function(){
+        $(this).parents('.group').find(':checkbox').prop('checked', this.checked);
+    });
+
+</script>

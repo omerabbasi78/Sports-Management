@@ -1,0 +1,11 @@
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\bin\Release\Service.Pattern.dll.config
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\bin\Release\Service.Pattern.dll
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\bin\Release\Service.Pattern.pdb
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\bin\Release\EntityFramework.dll
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\bin\Release\EntityFramework.SqlServer.dll
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\bin\Release\Repository.Pattern.dll
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\bin\Release\System.Net.Http.dll
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\bin\Release\Repository.Pattern.pdb
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\obj\Release\Service.Pattern.csprojResolveAssemblyReference.cache
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\obj\Release\Service.Pattern.dll
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Service.Pattern\obj\Release\Service.Pattern.pdb

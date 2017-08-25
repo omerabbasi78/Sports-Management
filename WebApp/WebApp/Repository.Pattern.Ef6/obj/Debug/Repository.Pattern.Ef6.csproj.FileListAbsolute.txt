@@ -1,0 +1,32 @@
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll.config
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.dll
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.pdb
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.dll
+C:\Users\Rizwan\Desktop\GITHUB\SchedulerV1\scheduler\Source\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.pdb
+C:\Users\Rizwan\Documents\Visual Studio 2015\Projects\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll.config
+C:\Users\Rizwan\Documents\Visual Studio 2015\Projects\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll
+C:\Users\Rizwan\Documents\Visual Studio 2015\Projects\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\Users\Rizwan\Documents\Visual Studio 2015\Projects\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.dll
+C:\Users\Rizwan\Documents\Visual Studio 2015\Projects\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.pdb
+C:\Users\Rizwan\Documents\Visual Studio 2015\Projects\WebApp\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
+C:\Users\Rizwan\Documents\Visual Studio 2015\Projects\WebApp\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.dll
+C:\Users\Rizwan\Documents\Visual Studio 2015\Projects\WebApp\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.pdb
+C:\Users\Rizwan\Desktop\GITHUB\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll.config
+C:\Users\Rizwan\Desktop\GITHUB\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll
+C:\Users\Rizwan\Desktop\GITHUB\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.pdb
+C:\Users\Rizwan\Desktop\GITHUB\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.dll
+C:\Users\Rizwan\Desktop\GITHUB\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.pdb
+C:\Users\Rizwan\Desktop\GITHUB\WebApp\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
+C:\Users\Rizwan\Desktop\GITHUB\WebApp\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.dll
+C:\Users\Rizwan\Desktop\GITHUB\WebApp\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.pdb
+E:\Github projects\WebApp\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll.config
+E:\Github projects\WebApp\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.dll
+E:\Github projects\WebApp\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.Ef6.pdb
+E:\Github projects\WebApp\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.dll
+E:\Github projects\WebApp\WebApp\Repository.Pattern.Ef6\bin\Debug\Repository.Pattern.pdb
+E:\Github projects\WebApp\WebApp\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.csprojResolveAssemblyReference.cache
+E:\Github projects\WebApp\WebApp\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.dll
+E:\Github projects\WebApp\WebApp\Repository.Pattern.Ef6\obj\Debug\Repository.Pattern.Ef6.pdb

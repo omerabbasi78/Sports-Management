@@ -1,0 +1,11 @@
+{
+  "name": "syntaxhighlighter",
+  "_cacheHeaders": {
+    "Content-Type": "application/octet-stream",
+    "Content-Disposition": "attachment; filename=syntaxhighlighter_3.0.83.zip"
+  },
+  "_source": "http://alexgorbatchev.com/SyntaxHighlighter/download/download.php?sh_current",
+  "_target": "*",
+  "_originalSource": "syntaxhighlighter",
+  "_direct": true
+}

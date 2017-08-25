@@ -1,0 +1,125 @@
+﻿@model AddPermissionsViewModels
+@{
+    ViewBag.Title = "Permissions";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="col-md-12">
+    <div class="card">
+        <div class="card-header m-b-md">
+            <h5 class="card-header-text">Permission</h5>
+        </div>
+        <div class="card-block">
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+                @Html.HiddenFor(model => model.Permission.PermissionId)
+                @Html.HiddenFor(model => model.Permission.PagePermissionId)
+                @Html.HiddenFor(model => model.Permission.IsActive)
+                @Html.ValidationSummary(true, "", new { @class = "text-danger" })
+
+                <div class="col-md-12 col-md-offset-1">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.GroupId, htmlAttributes: new { @class = "control-label" })
+                                @Html.DropDownListFor(model => model.GroupId, new SelectList(Model.MenuItemsGroupList, "MenuItemId", "MenuItemName"), "-- Select Group --", htmlAttributes: new { @class = "form-control" })
+                                @Html.ValidationMessageFor(model => model.GroupId, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        <div class="col-md-6 clear-both">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Permission.MenuItemId, htmlAttributes: new { @class = "control-label" })
+                                <span class="required">*</span>
+                                <div class="input-group">
+                                    @Html.DropDownListFor(model => model.MenuItemId, new SelectList(Model.MenuItemsList, "MenuItemId", "MenuItemName"), "-- Select Resource --", htmlAttributes: new { @class = "form-control" })
+                                    @Html.ValidationMessageFor(model => model.MenuItemId, "", new { @class = "text-danger" })
+                                    <span class="input-group-addon">
+                                        <a href="/Menu/Index/0/@Model.GroupId"><i class="fa fa-plus"></i></a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 clear-both">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Permission.ControllerName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Permission.ControllerName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Permission.ControllerName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                @Html.LabelFor(model => model.Permission.ActionName, htmlAttributes: new { @class = "control-label" })
+                                @Html.EditorFor(model => model.Permission.ActionName, new { htmlAttributes = new { @class = "form-control" } })
+                                @Html.ValidationMessageFor(model => model.Permission.ActionName, "", new { @class = "text-danger" })
+                            </div>
+                        </div>
+                        
+                        <div class="col-md-4">
+                            <div class="form-group">
+                                <label class="control-label">Permission<span class="required">*</span></label>
+                                @Html.DropDownListFor(model => model.PermissionId, new SelectList(Model.PermissionsEnum, "Value", "Name"), "--Select--", new { @class = "form-control" })
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+                <div class="form-btns col-md-12">
+                    <div class="tabs-buttons m-t-lg">
+                        <input type="submit" value="Save" class="btn btn-primary btn-sm" />
+                        <a href="/Permissions/Index/@Model.GroupId/@Model.MenuItemId" class="btn btn-sm btn-white">Cancel</a>
+                    </div>
+                </div>
+
+            }
+            @if (Model != null && Model.PermissionsList != null && Model.PermissionsList.Count() > 0)
+            {
+                <table class="table table-hover snap-primary-table">
+                    <thead>
+                        <tr>
+                            <th>Permission Name</th>
+                            <th>Controller Name</th>
+                            <th>Action Name</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model.PermissionsList)
+                        {
+                            <tr>
+                                <td>@item.PermissionText</td>
+                                <td>@item.ControllerName</td>
+                                <td>@item.ActionName</td>
+                                <td>
+                                    <a class="grid_action" href="@Url.Action("Index", "Permissions", new { rgid = Model.GroupId, rid=item.MenuItemId, id=item.PagePermissionId })" title="Edit"><i class="fa fa-edit"></i> </a>|
+                                    <a class="grid_action" href="@Url.Action("Delete", "Permissions", new { rgid = Model.GroupId, rid = item.MenuItemId, id = item.PagePermissionId })" onclick="return confirm('Are you sure you want to delete Permission?');"
+                                       title="Delete"><i class="fa fa-trash"></i></a>
+                                </td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+
+            }
+
+        </div>
+    </div>
+
+</div>
+
+<script src="~/Scripts/jquery-1.10.2.min.js"></script>
+<script>
+    $('#GroupId').on('change', function () {
+        var val = $('#GroupId').val();
+        window.location = "/Permissions/Index/" + val;
+    });
+    $('#MenuItemId').on('change', function () {
+        var rgid = $('#GroupId').val();
+        var rid = $('#MenuItemId').val();
+        if (rgid == "") {
+            rgid = "0";
+        }
+        window.location = "/Permissions/Index/" + rgid + '/' + rid;
+    });
+</script>
