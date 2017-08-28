@@ -18,11 +18,12 @@ namespace WebApp.Models
         public bool IsAccepted { get; set; }
 
 
-        [ForeignKey("Users")]
+        
         public int UserId { get; set; }
+        [ForeignKey("UserId")]
         public Users User { get; set; }
-        [ForeignKey("Events")]
         public int EventId { get; set; }
+        [ForeignKey("EventId")]
         public Events Event { get; set; }
     }
 }

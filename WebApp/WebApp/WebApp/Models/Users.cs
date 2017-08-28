@@ -11,10 +11,10 @@ namespace WebApp.Models
     public class Users : IUser<long>, IDisposable
     {
         public long Id { get; set; }
-        [Display(Name = "Role")]
-        public int RoleId { get; set; }
-        [ForeignKey("RoleId")]
-        public Roles Role { get; set; }
+        [Display(Name = "Team")]
+        public int TeamId { get; set; }
+        [ForeignKey("TeamId")]
+        public Team Team { get; set; }
         [Required(ErrorMessage = "User Name is required.")]
         [RegularExpression("^[a-zA-Z0-9_]*$", ErrorMessage = "Only alphanumeric and underscores are allowed in User Name field.")]
         [Display(Name = "User Name")]
@@ -33,15 +33,10 @@ namespace WebApp.Models
         public string Password { get; set; }
         [Required(ErrorMessage = "City is required.")]
         [Display(Name = "City")]
-        public int City { get; set; }
-        [Required(ErrorMessage = "Phone Number is required.")]
-        [Display(Name = "Phone Number")]
-        public string Phone { get; set; }
-        
+        public string City { get; set; }
         [Display(Name = "Street Address")]
         public string Address { get; set; }
         public bool IsAccountVerified { get; set; }
-        public Nullable<long> ShopId { get; set; }
         public string TempPassword { get; set; }
         public bool IsPasswordResetRequested { get; set; }
         [Display(Name = "Last Login")]
@@ -53,8 +48,6 @@ namespace WebApp.Models
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [Display(Name = "Date Created")]
         public System.DateTime DateModified { get; set; }
-        public bool IsTrustedUser { get; set; }
-        public int InvalidAttempts { get; set; }
         [Display(Name = "Profile Picture")]
         public string ProfilePic { get; set; }
 

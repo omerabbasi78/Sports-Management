@@ -22,14 +22,17 @@ namespace WebApp.Models
         [Display(Name = "Event End Date")]
         public DateTime EndDate { get; set; }
 
-        [ForeignKey("Sports")]
+        
         public int SportId { get; set; }
+        [ForeignKey("SportId")]
         public Sports Sport { get; set; }
-        [ForeignKey("Users")]
-        public int UserId { get; set; }
+        
+        public long UserId { get; set; }
+        [ForeignKey("UserId")]
         public Users User { get; set; }
-        [ForeignKey("Venues")]
-        public int VenueId { get; set; }
+        [ForeignKey("VenueId")]
         public Venues Venue { get; set; }
+        public int VenueId { get; set; }
+        
     }
 }

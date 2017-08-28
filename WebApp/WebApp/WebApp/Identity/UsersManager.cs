@@ -128,8 +128,8 @@ namespace WebApp.Identity
                     claims.Add(new Claim("UserId", user.Id.ToString()));
                     claims.Add(new Claim("Name", user.Name));
                     claims.Add(new Claim("ProfilePic", user.ProfilePic));
-                    claims.Add(new Claim("RoleName", user.Role.RoleName.ToString()));
-                    claims.Add(new Claim("RoleId", user.RoleId.ToString()));
+                    claims.Add(new Claim("TeamName", user.Team.TeamName.ToString()));
+                    claims.Add(new Claim("TeamId", user.Team.TeamId.ToString()));
 
                     var id = new ClaimsIdentity(claims,
                                                 DefaultAuthenticationTypes.ApplicationCookie);
