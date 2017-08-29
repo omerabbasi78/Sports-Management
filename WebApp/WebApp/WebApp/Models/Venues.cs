@@ -1,11 +1,11 @@
-﻿using System;
+﻿using Repository.Pattern.Ef6;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace WebApp.Models
 {
-    public class Venues
+    public class Venues : Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

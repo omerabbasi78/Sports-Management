@@ -653,6 +653,7 @@
     <Content Include="assets\icon\weather-icons\css\weather-icons-wind.min.css" />
     <Content Include="assets\icon\weather-icons\css\weather-icons.min.css" />
     <Content Include="assets\icon\weather-icons\fonts\weathericons-regular-webfont.svg" />
+    <Content Include="assets\images\111212.jpg" />
     <Content Include="assets\images\400%402x.png" />
     <Content Include="assets\images\400.jpg" />
     <Content Include="assets\images\403%402x.png" />
@@ -780,6 +781,7 @@
     <Content Include="assets\images\faq_man.png" />
     <Content Include="assets\images\favicon.ico" />
     <Content Include="assets\images\favicon.png" />
+    <Content Include="assets\images\favicon2.ico" />
     <Content Include="assets\images\file-U1.jpg" />
     <Content Include="assets\images\file-U2.jpg" />
     <Content Include="assets\images\file-U3.jpg" />
@@ -13282,6 +13284,7 @@
     <Content Include="bower_components\yui3\src\yui\tests\unit\lang.html" />
     <Content Include="bower_components\yui3\src\yui\tests\unit\object.html" />
     <Content Include="bower_components\yui3\src\yui\tests\unit\useragent.html" />
+    <Content Include="Content\css\custom-styles.css" />
     <Content Include="Scripts\jquery-2.1.3.min.js" />
     <Content Include="Content\css\bootstrap-grid.css" />
     <Content Include="Content\css\bootstrap-grid.min.css" />
@@ -16415,6 +16418,7 @@
     <Content Include="Views\Shared\_chatpanel.cshtml" />
     <Content Include="Views\Menu\Index.cshtml" />
     <Content Include="Views\Roles\Index.cshtml" />
+    <Content Include="Views\Shared\_LayoutFull.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

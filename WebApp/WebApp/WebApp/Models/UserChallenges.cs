@@ -1,11 +1,12 @@
-﻿using System;
+﻿using Repository.Pattern.Ef6;
+using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 
 namespace WebApp.Models
 {
-    public class UserChallenges
+    public class UserChallenges : Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

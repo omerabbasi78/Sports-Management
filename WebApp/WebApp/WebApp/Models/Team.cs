@@ -8,7 +8,7 @@ using System.Web;
 
 namespace WebApp.Models
 {
-    public class Team:Entity
+    public class Team : Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

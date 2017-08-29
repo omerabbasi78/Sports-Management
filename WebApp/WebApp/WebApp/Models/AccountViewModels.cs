@@ -91,6 +91,7 @@ namespace WebApp.Models
 
         [Display(Name = "Team Name")]
         public string TeamName { get; set; }
+        [Display(Name = "Team Registration")]
         public bool IsTeam { get; set; }
 
         [Required(ErrorMessage = "City is required.")]
@@ -98,6 +99,7 @@ namespace WebApp.Models
         public string City { get; set; }
         [Display(Name = "Street Address")]
         public string Address { get; set; }
+        [Display(Name = "Total Members")]
         public int NoOfMembers { get; set; }
     }
 

@@ -1,11 +1,12 @@
 ﻿
+using Repository.Pattern.Ef6;
 using System;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
 namespace WebApp.Models
 {
-    public class Sports
+    public class Sports : Entity
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]

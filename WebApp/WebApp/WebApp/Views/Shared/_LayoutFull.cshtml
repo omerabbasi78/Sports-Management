@@ -1,4 +1,5 @@
-﻿<!DOCTYPE html>
+﻿
+<!DOCTYPE html>
 <html lang="en">
 <head>
     <title>Sports Management</title>
@@ -9,32 +10,21 @@
     <meta name="keywords"
           content=", Responsive, Landing, Bootstrap, App, Template, Mobile, iOS, Android, apple, creative app">
     <meta name="author" content="Phoenixcoded">
-    
+
     <!-- Favicon icon -->
     <link rel="shortcut icon" href="/assets/images/favicon.png" type="image/x-icon">
     <link rel="icon" href="/assets/images/favicon2.ico" type="image/x-icon">
-    
+
     <!-- Google font-->
     <link href="~/assets/fonts/google-fonts.css" rel="stylesheet" />
     <link href="/assets/css/font-awesome.min.css" rel="stylesheet" type="text/css">
     <link rel="stylesheet" type="text/css" href="/assets/icon/icofont/css/icofont.css">
     <link rel="stylesheet" type="text/css" href="/assets/icon/simple-line-icons/css/simple-line-icons.css">
-
+    <link href="~/Content/css/custom-styles.css" rel="stylesheet" />
     @Styles.Render("~/Content/themecss")
-    <style>
-        .required{
-            color:red !important;
-        }
-    </style>
 </head>
 <body class="sidebar-mini fixed">
 
-    <!-- Top-Navbar-->
-    @Html.Partial("_TopHeader")
-    <!-- Side-Nav-->
-    @*@Html.Partial("_LeftNavigation")*@
-    <!-- Sidebar chat -->
-    @Html.Partial("_chatpanel")
 
     <div class="wrapper">
         <div class="loader-bg">
