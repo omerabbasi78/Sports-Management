@@ -39,5 +39,9 @@ namespace WebApp
         public DbSet<Permissions> Permissions { get; set; }
         public DbSet<PagePermissions> PagePermissions { get; set; }
         public DbSet<RolePermissions> RolePermissions { get; set; }
+        public DbSet<Events> Events { get; set; }
+        public DbSet<Sports> Sports { get; set; }
+        public DbSet<Venues> Venues { get; set; }
+        public DbSet<Team> Team { get; set; }
     }
 }

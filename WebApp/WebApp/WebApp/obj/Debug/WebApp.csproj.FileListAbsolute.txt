@@ -336,114 +336,114 @@ E:\Github projects\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Github projects\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Github projects\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 E:\Github projects\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\ApplicationInsights.config
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\csc.exe
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\System.Collections.Immutable.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\System.Reflection.Metadata.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\vbc.exe
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\VBCSCompiler.exe
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\VBCSCompiler.exe.config
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\WebApp.dll.config
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\WebApp.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\WebApp.pdb
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Antlr3.Runtime.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\EntityFramework.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\EntityFramework.SqlServer.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\log4net.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.Agent.Intercept.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.DependencyCollector.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.PerfCounterCollector.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.ServerTelemetryChannel.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.Web.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.WindowsServer.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.ApplicationInsights.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.Core.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.Owin.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Cookies.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Facebook.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Google.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Twitter.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.ServiceLocation.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.Configuration.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.Mvc.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Web.Infrastructure.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\MvcSiteMapProvider.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\MvcSiteMapProvider.WebActivator.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Newtonsoft.Json.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Owin.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Repository.Pattern.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Repository.Pattern.Ef6.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Service.Pattern.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.Helpers.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.Mvc.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.Optimization.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.Razor.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.WebPages.Deployment.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.WebPages.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.WebPages.Razor.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\WebActivatorEx.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\WebGrease.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Web.Administration.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\LinqKit.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\log4net.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.DependencyCollector.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.Web.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AI.WindowsServer.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.ApplicationInsights.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.ServiceLocation.pdb
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.ServiceLocation.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.Configuration.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.Mvc.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\MvcSiteMapProvider.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\MvcSiteMapProvider.WebActivator.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.Helpers.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.Mvc.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.Optimization.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.Razor.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.WebPages.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.WebPages.Deployment.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\System.Web.WebPages.Razor.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Antlr3.Runtime.pdb
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Newtonsoft.Json.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\EntityFramework.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\EntityFramework.SqlServer.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.Core.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.Owin.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Facebook.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Cookies.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Google.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Twitter.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.Initial.resources
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.Cache
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\ApplicationInsights.config
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\csc.exe
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.CodeAnalysis.CSharp.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.CodeAnalysis.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.CodeAnalysis.VisualBasic.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.CSharp.Core.targets
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.VisualBasic.Core.targets
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\System.Collections.Immutable.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\System.Reflection.Metadata.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\vbc.exe
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\VBCSCompiler.exe
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\WebApp.dll.config
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\WebApp.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\WebApp.pdb
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Antlr3.Runtime.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\EntityFramework.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\EntityFramework.SqlServer.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\log4net.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.Agent.Intercept.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.DependencyCollector.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.PerfCounterCollector.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.Web.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.WindowsServer.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.ApplicationInsights.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.Core.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.EntityFramework.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.Owin.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Host.SystemWeb.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Cookies.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Facebook.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Google.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.OAuth.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Twitter.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.ServiceLocation.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.Configuration.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.Mvc.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\MvcSiteMapProvider.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\MvcSiteMapProvider.WebActivator.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Newtonsoft.Json.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Owin.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Repository.Pattern.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Repository.Pattern.Ef6.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Service.Pattern.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.Helpers.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.Mvc.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.Optimization.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.Razor.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.WebPages.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.WebPages.Razor.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\WebActivatorEx.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\WebGrease.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Web.Administration.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\LinqKit.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\log4net.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.DependencyCollector.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.Web.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.WindowsServer.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.ApplicationInsights.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.ServiceLocation.pdb
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.ServiceLocation.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.Configuration.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.Mvc.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Practices.Unity.RegistrationByConvention.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\MvcSiteMapProvider.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\MvcSiteMapProvider.WebActivator.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.Helpers.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.Mvc.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.Optimization.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.Razor.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.WebPages.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Web.WebPages.Razor.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Antlr3.Runtime.pdb
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Newtonsoft.Json.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\EntityFramework.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\EntityFramework.SqlServer.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.Core.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.Owin.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.Identity.EntityFramework.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Host.SystemWeb.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Facebook.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Cookies.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.OAuth.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Google.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Twitter.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.Initial.resources
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.Cache
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb

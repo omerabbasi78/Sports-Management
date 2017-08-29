@@ -26,8 +26,8 @@ namespace WebApp.HelperClass
                     user.UserName = claimsIdentity.FindFirst(ClaimTypes.Name).Value;
                     user.Email = claimsIdentity.FindFirst(ClaimTypes.Email).Value;
                     user.Id = long.Parse(claimsIdentity.FindFirst("UserId").Value);
-                    user.RoleName = claimsIdentity.FindFirst("RoleName").Value;
-                    user.RoleId = Convert.ToInt32(claimsIdentity.FindFirst("RoleId").Value);
+                    user.TeamName = claimsIdentity.FindFirst("TeamName").Value;
+                    user.TeamId = Convert.ToInt32(claimsIdentity.FindFirst("TeamId").Value);
                     return user;
                 }
                 catch (Exception e)

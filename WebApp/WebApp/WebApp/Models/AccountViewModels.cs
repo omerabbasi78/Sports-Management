@@ -65,6 +65,14 @@ namespace WebApp.Models
 
     public class RegisterViewModel
     {
+        [Required(ErrorMessage = "User Name is required.")]
+        [RegularExpression("^[a-zA-Z0-9_]*$", ErrorMessage = "Only alphanumeric and underscores are allowed in User Name field.")]
+        [Display(Name = "User Name")]
+        public string UserName { get; set; }
+        [Required(ErrorMessage = "Name is required.")]
+        [RegularExpression("[A-Za-z ]*", ErrorMessage = "Please enter valid name.")]
+        [Display(Name = "Name")]
+        public string Name { get; set; }
         [Required]
         [EmailAddress]
         [Display(Name = "Email")]
@@ -80,6 +88,17 @@ namespace WebApp.Models
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Display(Name = "Team Name")]
+        public string TeamName { get; set; }
+        public bool IsTeam { get; set; }
+
+        [Required(ErrorMessage = "City is required.")]
+        [Display(Name = "City")]
+        public string City { get; set; }
+        [Display(Name = "Street Address")]
+        public string Address { get; set; }
+        public int NoOfMembers { get; set; }
     }
 
     public class ResetPasswordViewModel
