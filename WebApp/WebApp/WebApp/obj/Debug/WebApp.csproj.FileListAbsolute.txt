@@ -558,3 +558,5 @@ E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migra
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.Cache
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
+E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\AutoMapper.dll
+E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\AutoMapper.xml

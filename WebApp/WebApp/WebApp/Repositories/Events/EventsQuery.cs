@@ -8,9 +8,9 @@ using Repository.Pattern.Repositories;
 using Repository.Pattern.Ef6;
 using WebApp.Models;
 
-namespace newfrontiemvc.Repositories
+namespace WebApp.Repositories
 {
-   public class MenuItemsQuery : QueryObject<MenuItems>
+   public class EventsQuery : QueryObject<MenuItems>
     {
         //public RolesQuery WithAnySearch(string search)
         //{
