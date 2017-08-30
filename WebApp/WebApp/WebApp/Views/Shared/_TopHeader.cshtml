@@ -34,15 +34,43 @@
                 @if (Request.Url.ToString().ToLower().Contains("/account/"))
                 {
                     <li class="active">
-                        <a href="~/Account/Register"><i class="fa fa-calendar"></i> <span class="nav-label">Profile</span></a>
+                        <a href="~/Account/Register"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
                     </li>
                 }
                 else
                 {
                     <li>
-                        <a href="~/Account/Register"><i class="fa fa-calendar"></i> <span class="nav-label">Profile</span></a>
+                        <a href="~/Account/Register"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
                     </li>
                 }
+                @if (Request.Url.ToString().ToLower().Contains("/venue/"))
+                {
+                    <li class="active">
+                        <a href="~/Venue/Index"><i class="fa fa-street-view"></i> <span class="nav-label">Venue</span></a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/Venue/Index"><i class="fa fa-street-view"></i> <span class="nav-label">Venue</span></a>
+                    </li>
+                }
+
+                @if (Request.Url.ToString().ToLower().Contains("/ticket/"))
+                {
+                    <li class="active">
+                        <a href="~/Ticket/Index"><i class="fa fa-buy"></i> <span class="nav-label">Buy Ticket</span></a>
+                    </li>
+                }
+                else
+                {
+                    <li>
+                        <a href="~/Ticket/Index"><i class="fa fa-ticket"></i> <span class="nav-label">Buy Ticket</span></a>
+                    </li>
+                }
+
+
+
 
 
 
