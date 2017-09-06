@@ -9,17 +9,17 @@ namespace WebApp
 {
     //Update-Database -configuration WebApp.Migrations.Configuration -Verbose -force
 
-    public class ApplicationDbContext : Repository.Pattern.Ef6.DataContext
+    public class StoreDbContext : Repository.Pattern.Ef6.DataContext
     {
         //Update-Database -configuration WebApp.Migrations.Configuration -Verbose -force
-        public ApplicationDbContext()
+        public StoreDbContext()
             : base("DefaultConnection")
         {
         }
 
-        public static ApplicationDbContext Create()
+        public static StoreDbContext Create()
         {
-            return new ApplicationDbContext();
+            return new StoreDbContext();
         }
 
         public DbSet<Users> User { get; set; }

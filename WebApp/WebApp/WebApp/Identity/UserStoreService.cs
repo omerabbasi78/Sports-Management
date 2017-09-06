@@ -19,7 +19,7 @@ namespace WebApp.Identity
 
         IDisposable
     {
-        IdentityDbContext _context;
+        ApplicationDbContext _context;
         private bool _disposed;
 
 
@@ -28,7 +28,7 @@ namespace WebApp.Identity
             //_context = new IdentityDbContext();
         }
 
-        public UserStoreService(IdentityDbContext context)
+        public UserStoreService(ApplicationDbContext context)
         {
             _context = context;
         }

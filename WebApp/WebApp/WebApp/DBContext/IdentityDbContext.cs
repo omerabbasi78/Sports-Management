@@ -24,17 +24,17 @@ namespace WebApp
         }
     }
 
-    public class IdentityDbContext : IdentityDbContext<ApplicationUser>
+    public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         //Update-Database -configuration WebApp.Migrations.Configuration -Verbose -force
-        public IdentityDbContext()
+        public ApplicationDbContext()
             : base("DefaultConnection")
         {
         }
 
-        public static IdentityDbContext Create()
+        public static ApplicationDbContext Create()
         {
-            return new IdentityDbContext();
+            return new ApplicationDbContext();
         }
 
         public DbSet<Users> User { get; set; }
