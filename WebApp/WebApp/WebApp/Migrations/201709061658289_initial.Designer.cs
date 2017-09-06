@@ -13,12 +13,12 @@ namespace WebApp.Migrations
         
         string IMigrationMetadata.Id
         {
-            get { return "201709060944405_initial"; }
+            get { return "201709061658289_initial"; }
         }
         
         string IMigrationMetadata.Source
         {
-            get { return null; }
+            get { return Resources.GetString("Source"); }
         }
         
         string IMigrationMetadata.Target

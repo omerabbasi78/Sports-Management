@@ -175,7 +175,7 @@ namespace WebApp.Controllers
             if (ModelState.IsValid)
             {
                 var user = new Users();
-                user.UserName = model.Email;
+                user.UserName = model.UserName;
                 user.Email = model.Email;
                 user.Address = model.Address;
                 user.City = model.City;

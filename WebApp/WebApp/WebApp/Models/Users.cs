@@ -9,11 +9,11 @@ using System.Web;
 
 namespace WebApp.Models
 {
-    public class Users : Entity, IUser<long>, IDisposable
+    public class Users : IUser<long>, IDisposable
     {
         public long Id { get; set; }
         [Display(Name = "Team")]
-        public int TeamId { get; set; }
+        public int? TeamId { get; set; }
         [ForeignKey("TeamId")]
         public Team Team { get; set; }
         [Required(ErrorMessage = "User Name is required.")]
@@ -40,6 +40,7 @@ namespace WebApp.Models
         public bool IsAccountVerified { get; set; }
         public string TempPassword { get; set; }
         public bool IsPasswordResetRequested { get; set; }
+        public bool IsActive { get; set; }
         [Display(Name = "Last Login")]
         public Nullable<DateTime> LastLogin { get; set; }
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
@@ -47,7 +48,7 @@ namespace WebApp.Models
         public System.DateTime DateCreated { get; set; }
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [Display(Name = "Date Created")]
-        public System.DateTime DateModified { get; set; }
+        public System.DateTime? DateModified { get; set; }
         [Display(Name = "Profile Picture")]
         public string ProfilePic { get; set; }
 

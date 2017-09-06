@@ -9,6 +9,7 @@ using System.Security.Claims;
 using WebApp.Models;
 using WebApp.Helpers;
 using Repository.Pattern;
+using System.Data.Entity.Validation;
 
 namespace WebApp.Identity
 {
@@ -18,16 +19,16 @@ namespace WebApp.Identity
 
         IDisposable
     {
-        ApplicationDbContext _context;
+        IdentityDbContext _context;
         private bool _disposed;
 
 
         public UserStoreService()
         {
-            _context = new ApplicationDbContext();
+            //_context = new IdentityDbContext();
         }
 
-        public UserStoreService(ApplicationDbContext context)
+        public UserStoreService(IdentityDbContext context)
         {
             _context = context;
         }
@@ -202,7 +203,7 @@ namespace WebApp.Identity
 
         public Users FindByEmail(string email)
         {
-            return _context.User.Where(u => u.Email.ToUpper() == email.ToUpper() && u.IsActive==true).FirstOrDefault();
+            return _context.User.Where(u => u.Email.ToUpper() == email.ToUpper() && u.IsActive == true).FirstOrDefault();
         }
 
         #endregion
@@ -305,8 +306,8 @@ namespace WebApp.Identity
             }
             return result;
         }
-        
-        
+
+
         public void Dispose()
         {
             //  _context.Dispose();

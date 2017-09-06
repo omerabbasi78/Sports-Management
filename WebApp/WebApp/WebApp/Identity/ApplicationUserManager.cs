@@ -16,7 +16,7 @@ namespace WebApp.Identity
 
         public static ApplicationUserManager Create(IdentityFactoryOptions<ApplicationUserManager> options, IOwinContext context)
         {
-            var manager = new ApplicationUserManager(new UserStoreService(context.Get<ApplicationDbContext>()));
+            var manager = new ApplicationUserManager(new UserStoreService(context.Get<IdentityDbContext>()));
             // Configure validation logic for usernames
             manager.UserValidator = new UserValidator<Users,long>(manager)
             {

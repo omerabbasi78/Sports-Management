@@ -49,22 +49,17 @@ namespace WebApp.App_Start
 
             // TODO: Register your types here
             // container.RegisterType<IProductRepository, ProductRepository>();
-            container.RegisterType<DbContext, ApplicationDbContext>(new HierarchicalLifetimeManager());
-            container.RegisterType<ApplicationDbContext>(new HierarchicalLifetimeManager());
-            
-            
-            container.RegisterType<IUserStore<Users, long>, UserStoreService>(new InjectionConstructor(new ApplicationDbContext()));
+            container.RegisterType<DbContext, IdentityDbContext>(new HierarchicalLifetimeManager());
+            container.RegisterType<IdentityDbContext>(new HierarchicalLifetimeManager());
+
+
+            container.RegisterType<IUserStore<Users, long>, UserStoreService>(new InjectionConstructor(new IdentityDbContext()));
             container.RegisterType<ApplicationUserManager>(new PerRequestLifetimeManager());
 
             container.RegisterType<IAuthenticationManager>(new InjectionFactory(o => HttpContext.Current.GetOwinContext().Authentication));
 
             container.RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager());
             container.RegisterType<IDataContextAsync, ApplicationDbContext>(new PerRequestLifetimeManager());
-            container.RegisterType<IRepositoryAsync<Roles>, Repository<Roles>>();
-            container.RegisterType<IRepositoryAsync<MenuItems>, Repository<MenuItems>>();
-            container.RegisterType<IRepositoryAsync<Permissions>, Repository<Permissions>>();
-            container.RegisterType<IRepositoryAsync<PagePermissions>, Repository<PagePermissions>>();
-            container.RegisterType<IRepositoryAsync<RolePermissions>, Repository<RolePermissions>>();
 
             container.RegisterType<IEventsService, EventsService>();
             container.RegisterType<IRepositoryAsync<Events>, Repository<Events>>();
