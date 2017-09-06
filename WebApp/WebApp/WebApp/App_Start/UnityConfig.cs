@@ -61,15 +61,10 @@ namespace WebApp.App_Start
             container.RegisterType<IUnitOfWorkAsync, UnitOfWork>(new PerRequestLifetimeManager());
             container.RegisterType<IDataContextAsync, ApplicationDbContext>(new PerRequestLifetimeManager());
             container.RegisterType<IRepositoryAsync<Roles>, Repository<Roles>>();
-            container.RegisterType<IRolesService, RolesService>();
             container.RegisterType<IRepositoryAsync<MenuItems>, Repository<MenuItems>>();
-            container.RegisterType<IMenuItemsService, MenuItemsService>();
             container.RegisterType<IRepositoryAsync<Permissions>, Repository<Permissions>>();
-            container.RegisterType<IPermissionsService, PermissionsService>();
             container.RegisterType<IRepositoryAsync<PagePermissions>, Repository<PagePermissions>>();
-            container.RegisterType<IPagePermissionsService, PagePermissionsService>();
             container.RegisterType<IRepositoryAsync<RolePermissions>, Repository<RolePermissions>>();
-            container.RegisterType<IRolePermissionsService, RolePermissionsService>();
 
             container.RegisterType<IEventsService, EventsService>();
             container.RegisterType<IRepositoryAsync<Events>, Repository<Events>>();

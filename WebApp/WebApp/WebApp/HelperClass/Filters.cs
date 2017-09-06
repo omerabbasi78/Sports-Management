@@ -8,14 +8,6 @@ using Microsoft.AspNet.Identity.Owin;
 
 namespace WebApp.Helpers
 {
-//    Mill Owner
-//siteowner
-//ituser
-//TImber Owner
-//Truck Driver
-//Scale Office
-//Truck Company Owner
-
     public class CustomAuthorizeAttribute : AuthorizeAttribute
     {
         public CustomAuthorizeAttribute() : base()
@@ -29,7 +21,7 @@ namespace WebApp.Helpers
 
             if (!authorized)
             {
-                HttpContext.Current.Response.Redirect("/Errors/AccessDenied");
+                HttpContext.Current.Response.Redirect("/Account/Login");
             }
             return authorized;
         }

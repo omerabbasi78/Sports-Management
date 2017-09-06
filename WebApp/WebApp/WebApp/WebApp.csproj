@@ -263,9 +263,9 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\MenuController.cs" />
-    <Compile Include="Controllers\PermissionsController.cs" />
-    <Compile Include="Controllers\RolesController.cs" />
+    <Compile Include="Controllers\TicketController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
+    <Compile Include="Controllers\VenueController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
@@ -285,9 +285,9 @@
     <Compile Include="Identity\SmsService.cs" />
     <Compile Include="Identity\UsersManager.cs" />
     <Compile Include="Identity\UserStoreService.cs" />
-    <Compile Include="Migrations\201707091124067_Initial.cs" />
-    <Compile Include="Migrations\201707091124067_Initial.Designer.cs">
-      <DependentUpon>201707091124067_Initial.cs</DependentUpon>
+    <Compile Include="Migrations\201709060944405_initial.cs" />
+    <Compile Include="Migrations\201709060944405_initial.Designer.cs">
+      <DependentUpon>201709060944405_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
@@ -309,37 +309,15 @@
     <Compile Include="Repositories\Events\EventsRepository.cs" />
     <Compile Include="Repositories\Sports\SportsQuery.cs" />
     <Compile Include="Repositories\Sports\SportsRepository.cs" />
-    <Compile Include="Repositories\MenuItems\MenuItemsQuery.cs" />
-    <Compile Include="Repositories\MenuItems\MenuItemsRepository.cs" />
-    <Compile Include="Repositories\PagePermissions\PagePermissionsQuery.cs" />
-    <Compile Include="Repositories\PagePermissions\PagePermissionsRepository.cs" />
-    <Compile Include="Repositories\Permissions\PermissionsQuery.cs" />
-    <Compile Include="Repositories\Permissions\PermissionsRepository.cs" />
-    <Compile Include="Repositories\RolePermissions\RolePermissionsQuery.cs" />
-    <Compile Include="Repositories\RolePermissions\RolePermissionsRepository.cs" />
-    <Compile Include="Repositories\Roles\RolesQuery.cs" />
-    <Compile Include="Repositories\Roles\RolesRepository.cs" />
     <Compile Include="Services\Events\IEventsService.cs" />
     <Compile Include="Services\Events\EventsService.cs" />
     <Compile Include="Services\Sports\ISportsService.cs" />
     <Compile Include="Services\Sports\SportsService.cs" />
-    <Compile Include="Services\MenuItems\IMenuItemsService.cs" />
-    <Compile Include="Services\MenuItems\MenuItemsService.cs" />
-    <Compile Include="Services\PagePermissions\IPagePermissionsService.cs" />
-    <Compile Include="Services\PagePermissions\PagePermissionsService.cs" />
-    <Compile Include="Services\Permissions\IPermissionsService.cs" />
-    <Compile Include="Services\Permissions\PermissionsService.cs" />
-    <Compile Include="Services\RolePermissions\IRolePermissionsService.cs" />
-    <Compile Include="Services\RolePermissions\RolePermissionsService.cs" />
-    <Compile Include="Services\Roles\IRolesService.cs" />
-    <Compile Include="Services\Roles\RolesService.cs" />
     <Compile Include="SignalR\ChatHub.cs" />
     <Compile Include="ViewModels\EventsViewModels.cs" />
     <Compile Include="ViewModels\GeneralViewModels.cs" />
-    <Compile Include="ViewModels\MenuItemsViewModels.cs" />
     <Compile Include="Startup.cs" />
     <Compile Include="ViewModels\AccountViewModels.cs" />
-    <Compile Include="ViewModels\PermissionsViewModels.cs" />
     <Compile Include="ViewModels\UserInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -16405,12 +16383,6 @@
     <Content Include="Views\Account\ResetPasswordConfirmation.cshtml" />
     <Content Include="Views\Account\SendCode.cshtml" />
     <Content Include="Views\Account\VerifyCode.cshtml" />
-    <Content Include="Views\Manage\AddPhoneNumber.cshtml" />
-    <Content Include="Views\Manage\ChangePassword.cshtml" />
-    <Content Include="Views\Manage\Index.cshtml" />
-    <Content Include="Views\Manage\ManageLogins.cshtml" />
-    <Content Include="Views\Manage\SetPassword.cshtml" />
-    <Content Include="Views\Manage\VerifyPhoneNumber.cshtml" />
     <Content Include="Views\Shared\Lockout.cshtml" />
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Templates\Default\ForgotPassword.cshtml" />
@@ -16423,17 +16395,15 @@
     <Content Include="Views\Shared\DisplayTemplates\MetaRobotsHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\MenuHelperModel.cshtml" />
     <Content Include="Views\Shared\DisplayTemplates\CanonicalHelperModel.cshtml" />
-    <Content Include="Views\Permissions\Index.cshtml" />
-    <Content Include="Views\Permissions\PagePermissions.cshtml" />
-    <Content Include="Views\Permissions\RolePermissions.cshtml" />
     <Content Include="Views\Shared\_TopHeader.cshtml" />
     <Content Include="Views\Shared\_LeftNavigation.cshtml" />
     <Content Include="Views\Shared\_chatpanle.cshtml" />
     <Content Include="Views\Shared\_chatpanel.cshtml" />
-    <Content Include="Views\Menu\Index.cshtml" />
-    <Content Include="Views\Roles\Index.cshtml" />
     <Content Include="Views\Shared\_LayoutFull.cshtml" />
     <Content Include="Views\Events\Index.cshtml" />
+    <Content Include="Views\User\EditProfile.cshtml" />
+    <Content Include="Views\Venue\Index.cshtml" />
+    <Content Include="Views\Ticket\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -16450,15 +16420,15 @@
     <Content Include="Scripts\jquery-1.10.2.min.map" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201707091124067_Initial.resx">
-      <DependentUpon>201707091124067_Initial.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <Service Include="{4A0DDDB5-7A95-4FBF-97CC-616D07737A77}" />
   </ItemGroup>
   <ItemGroup>
     <TypeScriptCompile Include="bower_components\moment\moment.d.ts" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201709060944405_initial.resx">
+      <DependentUpon>201709060944405_initial.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

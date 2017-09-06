@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNet.Identity;
+using Repository.Pattern.Ef6;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -8,7 +9,7 @@ using System.Web;
 
 namespace WebApp.Models
 {
-    public class Users : IUser<long>, IDisposable
+    public class Users : Entity, IUser<long>, IDisposable
     {
         public long Id { get; set; }
         [Display(Name = "Team")]
@@ -41,7 +42,6 @@ namespace WebApp.Models
         public bool IsPasswordResetRequested { get; set; }
         [Display(Name = "Last Login")]
         public Nullable<DateTime> LastLogin { get; set; }
-        public bool IsActive { get; set; }
         [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
         [Display(Name = "Date Created")]
         public System.DateTime DateCreated { get; set; }

@@ -11,7 +11,7 @@ using WebApp.Services;
 
 namespace WebApp.Controllers
 {
-    public class HomeController : Controller
+    public class HomeController : BaseController
     {
         
         

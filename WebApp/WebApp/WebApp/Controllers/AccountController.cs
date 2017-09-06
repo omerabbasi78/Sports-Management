@@ -11,25 +11,22 @@ using Microsoft.Owin.Security;
 using WebApp.Models;
 using WebApp.Identity;
 using Repository.Pattern.Infrastructure;
+using Repository.Pattern;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace WebApp.Controllers
 {
     [Authorize]
-    public class AccountController : Controller
+    public class AccountController : BaseController
     {
         private ApplicationSignInManager _signInManager;
         private ApplicationUserManager _userManager;
-
+        private UsersManager AppUserManager;
         public AccountController()
         {
+            AppUserManager = new UsersManager();
         }
-
-        public AccountController(ApplicationUserManager userManager, ApplicationSignInManager signInManager )
-        {
-            UserManager = userManager;
-            SignInManager = signInManager;
-        }
-
+        
         public ApplicationSignInManager SignInManager
         {
             get
@@ -54,6 +51,18 @@ namespace WebApp.Controllers
             }
         }
 
+        //public UsersManager AppUserManager
+        //{
+        //    get
+        //    {
+        //        return _usersManager ?? HttpContext.GetOwinContext().GetUserManager<UsersManager>();
+        //    }
+        //    private set
+        //    {
+        //        _usersManager = value;
+        //    }
+        //}
+
         //
         // GET: /Account/Login
         [AllowAnonymous]
@@ -68,29 +77,41 @@ namespace WebApp.Controllers
         [HttpPost]
         [AllowAnonymous]
         [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Login(LoginViewModel model, string returnUrl)
+        public ActionResult Login(LoginViewModel model, string returnUrl)
         {
             if (!ModelState.IsValid)
             {
                 return View(model);
             }
+            Result<Users> result = new Result<Users>();
+            result = AppUserManager.SignIn(model);
+            if (result.success)
+            {
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                AddErrors(result.errors, result.ErrorMessage);
+            }
+
+            return View(model);
 
             // This doesn't count login failures towards account lockout
             // To enable password failures to trigger account lockout, change to shouldLockout: true
-            var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
-            switch (result)
-            {
-                case SignInStatus.Success:
-                    return RedirectToLocal(returnUrl);
-                case SignInStatus.LockedOut:
-                    return View("Lockout");
-                case SignInStatus.RequiresVerification:
-                    return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
-                case SignInStatus.Failure:
-                default:
-                    ModelState.AddModelError("", "Invalid login attempt.");
-                    return View(model);
-            }
+            //var result = await SignInManager.PasswordSignInAsync(model.Email, model.Password, model.RememberMe, shouldLockout: false);
+            //switch (result)
+            //{
+            //    case SignInStatus.Success:
+            //        return RedirectToLocal(returnUrl);
+            //    case SignInStatus.LockedOut:
+            //        return View("Lockout");
+            //    case SignInStatus.RequiresVerification:
+            //        return RedirectToAction("SendCode", new { ReturnUrl = returnUrl, RememberMe = model.RememberMe });
+            //    case SignInStatus.Failure:
+            //    default:
+            //        ModelState.AddModelError("", "Invalid login attempt.");
+            //        return View(model);
+            //}
         }
 
         //
@@ -149,7 +170,7 @@ namespace WebApp.Controllers
        [HttpPost]
        [AllowAnonymous]
        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> Register(RegisterViewModel model)
+        public ActionResult Register(RegisterViewModel model)
         {
             if (ModelState.IsValid)
             {
@@ -161,16 +182,17 @@ namespace WebApp.Controllers
                 user.IsActive = true;
                 user.DateCreated = DateTime.Now;
                 user.Name = model.Name;
+                user.Password = model.Password;
                 if (model.IsTeam)
                 {
                     Team Team = new Team { IsActive = true, NoOfMembers = model.NoOfMembers, ObjectState = ObjectState.Added };
                     user.Team = Team;
                 }
                 
-                var result = await UserManager.CreateAsync(user, model.Password);
-                if (result.Succeeded)
+                var result = AppUserManager.CreateUser(user, this);
+                if (result.success)
                 {
-                    await SignInManager.SignInAsync(user, isPersistent: false, rememberBrowser: false);
+                    AppUserManager.SignIn(new LoginViewModel { UserName = user.UserName, Password = user.Password, Email = user.Email, RememberMe = true});
 
                     // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
                     // Send an email with this link
@@ -180,7 +202,7 @@ namespace WebApp.Controllers
 
                     return RedirectToAction("Index", "Home");
                 }
-                AddErrors(result);
+                AddErrors(result.errors, result.ErrorMessage);
             }
 
             // If we got this far, something failed, redisplay form

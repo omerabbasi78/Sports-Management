@@ -554,9 +554,9 @@ E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Sec
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.Initial.resources
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.Cache
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\AutoMapper.dll
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\AutoMapper.xml
+E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.initial.resources
+E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.Cache

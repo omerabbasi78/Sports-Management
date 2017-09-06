@@ -31,16 +31,16 @@
                     </li>
                 }
 
-                @if (Request.Url.ToString().ToLower().Contains("/account/"))
+                @if (Request.Url.ToString().ToLower().Contains("/user/"))
                 {
                     <li class="active">
-                        <a href="~/Account/Register"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
+                        <a href="~/User/EditProfile"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
                     </li>
                 }
                 else
                 {
                     <li>
-                        <a href="~/Account/Register"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
+                        <a href="~/User/EditProfile"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
                     </li>
                 }
                 @if (Request.Url.ToString().ToLower().Contains("/venue/"))

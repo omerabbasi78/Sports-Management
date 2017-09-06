@@ -1,11 +1,11 @@
-﻿using System;
+﻿
 using System.Collections.Generic;
-using System.Linq;
-using System.Web;
 using System.Web.Mvc;
+using WebApp.Helpers;
 
 namespace WebApp.Controllers
 {
+    [CustomAuthorize]
     public class BaseController : Controller
     {
         public void AddErrors(List<string> errors, string message)
