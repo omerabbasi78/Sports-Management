@@ -10,6 +10,9 @@ using WebApp.Models;
 using WebApp.Helpers;
 using Repository.Pattern;
 using System.Data.Entity.Validation;
+using AutoMapper;
+using System.Web;
+using Microsoft.Owin.Security;
 
 namespace WebApp.Identity
 {
@@ -62,10 +65,70 @@ namespace WebApp.Identity
         }
         public Task UpdateAsync(Users user)
         {
+            var date = _context.User.Where(w => w.Id == user.Id).Select(s => new {
+                LastLogin = s.LastLogin
+            }).FirstOrDefault();
+            Users oldUser = _context.User.Where(w => w.Id == user.Id).FirstOrDefault();
+            Users nameUser = _context.User.Where(w => w.UserName == user.UserName && w.IsActive && w.Id != user.Id).FirstOrDefault();
+            
+            if (nameUser != null)
+            {
+                //sorry app nhi kr skty pehly mojood hy
+            }
+            else
+            {
+                //oldUser = user;
+                //user.Address = oldUser.Address;
+                //user.City = oldUser.Address;
+                user.DateCreated = oldUser.DateCreated;
+                user.DateModified = DateTime.Now;
+                //user.Email = oldUser.Email;
+                user.IsActive = oldUser.IsActive;
+                user.Id = oldUser.Id;
+                user.IsPasswordResetRequested = oldUser.IsPasswordResetRequested;
+                //user.IsTeam = oldUser.IsTeam;
+                //user.LastLogin = oldUser.LastLogin;
+                //user.Name = oldUser.Name;
+                user.Password = oldUser.Password;
+                //user.ProfilePic = oldUser.ProfilePic;
+                user.TempPassword= oldUser.TempPassword;
+                //user.TotalMembers = oldUser.TotalMembers;
+                //user.UserName = oldUser.UserName;
 
-            _context.User.Attach(user);
-            _context.Entry(user).State = EntityState.Modified;
+                _context.Entry(oldUser).CurrentValues.SetValues(user);
+                oldUser.DateModified = DateTime.Now;
+            }
+            //_context.User.Attach(user);
+            _context.Entry(oldUser).State = EntityState.Modified;
             _context.SaveChanges();
+            if (user.LastLogin == date.LastLogin)
+            {
+                var Identity = ClaimsPrincipal.Current.Identities.First();
+                //var AccountNo = CP.Claims.FirstOrDefault(p => p.Type == ClaimTypes.UserData).Value;
+                //CP.RemoveClaim(new Claim(ClaimTypes.UserData, AccountNo));
+                //CP.AddClaim(new Claim(ClaimTypes.UserData, value));
+
+                var AuthenticationManager = HttpContext.Current.GetOwinContext().Authentication;
+                //var Identity = HttpContext.Current.User.Identity as ClaimsIdentity;
+                Identity.RemoveClaim(Identity.FindFirst("ProfilePic"));
+                Identity.RemoveClaim(Identity.FindFirst(ClaimTypes.Name));
+                Identity.RemoveClaim(Identity.FindFirst(ClaimTypes.Email));
+                Identity.RemoveClaim(Identity.FindFirst(ClaimTypes.NameIdentifier));
+
+                Identity.AddClaim(new Claim(ClaimTypes.Email, user.Email));
+                Identity.AddClaim(new Claim(ClaimTypes.Name, user.Name));
+                Identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.UserName));
+                try
+                {
+                    Identity.AddClaim(new Claim("ProfilePic", user.ProfilePic));
+                }
+                catch (Exception)
+                {
+                }
+
+                AuthenticationManager.AuthenticationResponseGrant = new AuthenticationResponseGrant
+                (new ClaimsPrincipal(Identity), new AuthenticationProperties { IsPersistent = true });
+            }
 
             return Task.FromResult(0);
 

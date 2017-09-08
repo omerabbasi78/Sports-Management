@@ -13,6 +13,8 @@ using WebApp.Identity;
 using Repository.Pattern.Infrastructure;
 using Repository.Pattern;
 using Microsoft.AspNet.Identity.EntityFramework;
+using AutoMapper;
+using WebApp.ViewModels;
 
 namespace WebApp.Controllers
 {
@@ -170,25 +172,26 @@ namespace WebApp.Controllers
        [HttpPost]
        [AllowAnonymous]
        [ValidateAntiForgeryToken]
-        public ActionResult Register(RegisterViewModel model)
+        public ActionResult Register(RegisterViewModel model, HttpPostedFileBase file)
         {
             if (ModelState.IsValid)
             {
-                var user = new Users();
-                user.UserName = model.UserName;
-                user.Email = model.Email;
-                user.Address = model.Address;
-                user.City = model.City;
-                user.IsActive = true;
-                user.DateCreated = DateTime.Now;
-                user.Name = model.Name;
-                user.Password = model.Password;
+                Users user = new Users();
+                Mapper.Map(model, user);
+                //user.UserName = model.UserName;
+                //user.Email = model.Email;
+                //user.Address = model.Address;
+                //user.City = model.City;
+                //user.IsActive = true;
+                //user.DateCreated = DateTime.Now;
+                //user.Name = model.Name;
+                //user.Password = model.Password;
+                //user.IsTeam = model.IsTeam;
+                //user.TotalMembers = model.TotalMembers;
                 if (model.IsTeam)
                 {
-                    Team Team = new Team { IsActive = true, NoOfMembers = model.NoOfMembers, ObjectState = ObjectState.Added };
-                    user.Team = Team;
+                    user.TotalMembers = 1;
                 }
-                
                 var result = AppUserManager.CreateUser(user, this);
                 if (result.success)
                 {
@@ -230,31 +233,28 @@ namespace WebApp.Controllers
             return View();
         }
 
-        //
-        // POST: /Account/ForgotPassword
         [HttpPost]
         [AllowAnonymous]
-        [ValidateAntiForgeryToken]
-        public async Task<ActionResult> ForgotPassword(ForgotPasswordViewModel model)
+        //[ValidateAntiForgeryToken]
+        public ActionResult ForgotPassword(ForgotPasswordViewModel model)
         {
             if (ModelState.IsValid)
             {
-                var user = await UserManager.FindByNameAsync(model.Email);
-                if (user == null || !(await UserManager.IsEmailConfirmedAsync(user.Id)))
+                Result<int> result = new Result<int>();
+                result = AppUserManager.ForgotPassword(model, this);
+                if (result.success)
                 {
-                    // Don't reveal that the user does not exist or is not confirmed
-                    return View("ForgotPasswordConfirmation");
+                    TempData["ForgetPasswordMsg"] = "Please check your email to reset your password.";
+                    
+                    return RedirectToAction("Login");
                 }
-
-                // For more information on how to enable account confirmation and password reset please visit http://go.microsoft.com/fwlink/?LinkID=320771
-                // Send an email with this link
-                // string code = await UserManager.GeneratePasswordResetTokenAsync(user.Id);
-                // var callbackUrl = Url.Action("ResetPassword", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);		
-                // await UserManager.SendEmailAsync(user.Id, "Reset Password", "Please reset your password by clicking <a href=\"" + callbackUrl + "\">here</a>");
-                // return RedirectToAction("ForgotPasswordConfirmation", "Account");
+                else
+                {
+                    AddErrors(result.errors, result.ErrorMessage);
+                }
             }
 
-            // If we got this far, something failed, redisplay form
+
             return View(model);
         }
 

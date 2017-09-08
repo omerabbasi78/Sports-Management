@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
 namespace WebApp.ViewModels
@@ -48,11 +49,14 @@ namespace WebApp.ViewModels
 
     public class LoginViewModel
     {
-        [Required(ErrorMessage = "Username is required.")]
-        [Display(Name = "Username")]
-        public string Username { get; set; }
 
-        [Required(ErrorMessage = "Password is required.")]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
+        [Required]
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+
+        [Required]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
         public string Password { get; set; }
@@ -63,11 +67,7 @@ namespace WebApp.ViewModels
 
     public class RegisterViewModel
     {
-        [Required]
-        [EmailAddress]
-        [Display(Name = "Email")]
-        public string Email { get; set; }
-
+        public long Id { get; set; }
         [Required(ErrorMessage = "User Name is required.")]
         [RegularExpression("^[a-zA-Z0-9_]*$", ErrorMessage = "Only alphanumeric and underscores are allowed in User Name field.")]
         [Display(Name = "User Name")]
@@ -76,17 +76,10 @@ namespace WebApp.ViewModels
         [RegularExpression("[A-Za-z ]*", ErrorMessage = "Please enter valid name.")]
         [Display(Name = "Name")]
         public string Name { get; set; }
-
-
-        [Required(ErrorMessage = "City is required.")]
-        [Display(Name = "City")]
-        public int City { get; set; }
-        [Required(ErrorMessage = "Phone Number is required.")]
-        [Display(Name = "Phone Number")]
-        public string Phone { get; set; }
-
-        [Display(Name = "Address")]
-        public string Address { get; set; }
+        [Required]
+        [EmailAddress]
+        [Display(Name = "Email")]
+        public string Email { get; set; }
 
         [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
@@ -98,21 +91,32 @@ namespace WebApp.ViewModels
         [Display(Name = "Confirm password")]
         [Compare("Password", ErrorMessage = "The password and confirmation password do not match.")]
         public string ConfirmPassword { get; set; }
+
+        [Required(ErrorMessage = "City is required.")]
+        [Display(Name = "City")]
+        public string City { get; set; }
+        [Display(Name = "Address")]
+        public string Address { get; set; }
+        
+        [Display(Name = "Profile Picture")]
+        public string ProfilePic { get; set; }
+        [Display(Name = "Team Registration")]
+        public bool IsTeam { get; set; }
+        [Display(Name = "Total Members")]
+        public int TotalMembers { get; set; }
+        [Display(Name = "Last Login")]
+        public DateTime? LastLogin { get; set; }
     }
 
     public class ResetPasswordViewModel
     {
-        [Required(ErrorMessage = "Username is required.")]
-        [Display(Name = "Username")]
-        public string UserName { get; set; }
-
-
-
+        [Required]
         [EmailAddress]
         [Display(Name = "Email")]
         public string Email { get; set; }
-
-        [Required(ErrorMessage = "Password is required.")]
+        [Display(Name = "UserName")]
+        public string UserName { get; set; }
+        [Required]
         [StringLength(100, ErrorMessage = "The {0} must be at least {2} characters long.", MinimumLength = 6)]
         [DataType(DataType.Password)]
         [Display(Name = "Password")]
@@ -133,8 +137,8 @@ namespace WebApp.ViewModels
         public string Name { get; set; }
         [Required(ErrorMessage = "Username is required.")]
         [Display(Name = "User Name")]
-        public string UserName { get; set; }
-
+        public string Username { get; set; }
         public string Url { get; set; }
+        public string UserName { get; set; }
     }
 }

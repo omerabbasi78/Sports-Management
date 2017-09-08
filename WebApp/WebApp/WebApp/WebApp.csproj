@@ -259,6 +259,9 @@
     <Compile Include="App_Start\Startup.Auth.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
     <Compile Include="App_Start\UnityMvcActivator.cs" />
+    <Compile Include="AutoMapper\AutoMapperConfiguration.cs" />
+    <Compile Include="AutoMapper\Profiles\DomainMappingProfile.cs" />
+    <Compile Include="AutoMapper\Profiles\ViewModelMappingProfile.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
@@ -291,11 +294,9 @@
       <DependentUpon>201709061658289_initial.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\AccountViewModels.cs" />
     <Compile Include="DBContext\StoreDbContext.cs" />
     <Compile Include="Models\Events.cs" />
     <Compile Include="Models\Sports.cs" />
-    <Compile Include="Models\Team.cs" />
     <Compile Include="Models\UserChallenges.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\Venues.cs" />
@@ -1664,6 +1665,7 @@
     <Content Include="Views\User\EditProfile.cshtml" />
     <Content Include="Views\Venue\Index.cshtml" />
     <Content Include="Views\Ticket\Index.cshtml" />
+    <Content Include="Views\Shared\_SuccessMessage.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

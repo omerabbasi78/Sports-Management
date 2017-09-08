@@ -5,7 +5,7 @@ using WebApp.Helpers;
 
 namespace WebApp.Controllers
 {
-    //[CustomAuthorize]
+    [CustomAuthorize]
     public class BaseController : Controller
     {
         public void AddErrors(List<string> errors, string message)

@@ -1,21 +1,65 @@
-﻿
-using System.Web.Mvc;
+﻿using System.Web.Mvc;
+using WebApp.HelperClass;
+using WebApp.Identity;
+using Repository.Pattern;
+using WebApp.Models;
+using AutoMapper;
+using WebApp.ViewModels;
+using System.Web;
 
 namespace WebApp.Controllers
 {
     public class UserController : BaseController
     {
+        UsersManager _usermanager;
+        public UserController()
+        {
+            _usermanager = new UsersManager();
+        }
         // GET: User
         public ActionResult EditProfile()
         {
-            //get user id from cookie and show data in view using layout
-            return View();
+
+            var userId = Common.CurrentUser.Id;
+
+            Result<Users> user = _usermanager.FindById(userId);
+
+            RegisterViewModel registerViewModel = new RegisterViewModel();
+            Mapper.Map(user.data, registerViewModel);
+
+            if (user.success)
+            {
+                return View(registerViewModel);
+            }
+            return RedirectToAction("Login", "Account");
         }
 
         [HttpPost]
-        public ActionResult EditProfile(WebApp.Models.RegisterViewModel registerModel)
+        public ActionResult EditProfile(RegisterViewModel registerModel, HttpPostedFileBase FileUpload)
         {
-            return View();
+            Result<string> result = new Result<string>();
+            Users user = new Users();
+            Result<long> res = new Result<long>();
+            if (FileUpload != null && FileUpload.ContentLength > 0)
+            {
+                result = Common.SaveProfileImage(registerModel.Id.ToString(), FileUpload);
+                if (result.success)
+                {
+                    registerModel.ProfilePic = result.data;
+                }
+            }
+            Mapper.Map(registerModel, user);
+            res = _usermanager.UpdateUser(user);
+            if (res.success)
+            {
+                TempData["SuccessMessage"] = "User updated Successfully.";
+                return RedirectToAction("Index", "Home");
+            }
+            else
+            {
+                AddErrors(res.errors, res.ErrorMessage);
+            }
+            return View(registerModel);
         }
     }
 }
