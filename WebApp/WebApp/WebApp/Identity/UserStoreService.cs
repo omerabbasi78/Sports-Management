@@ -65,9 +65,6 @@ namespace WebApp.Identity
         }
         public Task UpdateAsync(Users user)
         {
-            var date = _context.User.Where(w => w.Id == user.Id).Select(s => new {
-                LastLogin = s.LastLogin
-            }).FirstOrDefault();
             Users oldUser = _context.User.Where(w => w.Id == user.Id).FirstOrDefault();
             Users nameUser = _context.User.Where(w => w.UserName == user.UserName && w.IsActive && w.Id != user.Id).FirstOrDefault();
             
@@ -98,38 +95,7 @@ namespace WebApp.Identity
                 _context.Entry(oldUser).CurrentValues.SetValues(user);
                 oldUser.DateModified = DateTime.Now;
             }
-            //_context.User.Attach(user);
-            _context.Entry(oldUser).State = EntityState.Modified;
             _context.SaveChanges();
-            if (user.LastLogin == date.LastLogin)
-            {
-                var Identity = ClaimsPrincipal.Current.Identities.First();
-                //var AccountNo = CP.Claims.FirstOrDefault(p => p.Type == ClaimTypes.UserData).Value;
-                //CP.RemoveClaim(new Claim(ClaimTypes.UserData, AccountNo));
-                //CP.AddClaim(new Claim(ClaimTypes.UserData, value));
-
-                var AuthenticationManager = HttpContext.Current.GetOwinContext().Authentication;
-                //var Identity = HttpContext.Current.User.Identity as ClaimsIdentity;
-                Identity.RemoveClaim(Identity.FindFirst("ProfilePic"));
-                Identity.RemoveClaim(Identity.FindFirst(ClaimTypes.Name));
-                Identity.RemoveClaim(Identity.FindFirst(ClaimTypes.Email));
-                Identity.RemoveClaim(Identity.FindFirst(ClaimTypes.NameIdentifier));
-
-                Identity.AddClaim(new Claim(ClaimTypes.Email, user.Email));
-                Identity.AddClaim(new Claim(ClaimTypes.Name, user.Name));
-                Identity.AddClaim(new Claim(ClaimTypes.NameIdentifier, user.UserName));
-                try
-                {
-                    Identity.AddClaim(new Claim("ProfilePic", user.ProfilePic));
-                }
-                catch (Exception)
-                {
-                }
-
-                AuthenticationManager.AuthenticationResponseGrant = new AuthenticationResponseGrant
-                (new ClaimsPrincipal(Identity), new AuthenticationProperties { IsPersistent = true });
-            }
-
             return Task.FromResult(0);
 
         }
@@ -162,39 +128,7 @@ namespace WebApp.Identity
             return result;
         }
 
-
-
-
-        //public IEnumerable<SuperAdminUser> GetAdminUser()
-        //{
-
-
-        //    try
-        //    {
-        //        var users = (from u in _context.Users
-        //                    join p in _context.partners on u.partner_id equals p.id
-        //                    where u.role != null && u.role.ToLower() == Common.Roles.ADMIN && u.is_deleted != true
-        //                     select new SuperAdminUser
-        //                     { 
-        //                       Id = u.Id,
-        //                       Name = u.UserName, 
-        //                       FirstName = u.first_name ,
-        //                       LastName = u.last_name,
-        //                       Email = u.email,
-        //                       PartnerName = p.name
-
-        //                    });
-        //        //_context.Users.Where(u => (u.Is_admin == true && u.IsDeleted != true));
-        //        return users;
-
-        //    }
-        //    catch (Exception ex)
-        //    {
-
-        //    }
-        //    return null;
-
-        //}
+        
 
         #endregion
 
@@ -280,72 +214,7 @@ namespace WebApp.Identity
         #region CustomMethod
 
         #endregion
-
-
-        /*     #region CustomMethod
-
-         * 
-         * 
-        public Result<int> UpdateUsersbyEmail(string email)
-        {
-            Result<int> result = new Result<int>();
-            try
-            {
-              List<Users> users = _context.User.Where(u => u.email == email).ToList<User>();
-              if(users != null && users.Count > 0)
-              {
-
-                  foreach(Users u in users)
-                  {
-                      u.is_password_reset_requested = true;
-                   
-                  }
-
-                  _context.SaveChanges();
-              }
-
-            }
-            catch(Exception ex)
-            {
-                result.success = false;
-                result.AddError(ex.Message);
-            }
-            return result;
-        }
-
-        public Result<int> UpdateUsersbyEmail(string email,int userId)
-        {
-            Result<int> result = new Result<int>();
-            try
-            {
-                List<Users> users = _context.Users.Where(u => u.email == email).ToList<User>();
-                if (users != null && users.Count > 0)
-                {
-
-                    foreach (Users u in users)
-                    {
-                        if (u.Id == userId)
-                        {
-                            u.is_password_updated = true;
-                            u.temp_password = null;
-                        }
-                        u.is_password_reset_requested = false;
-
-                    }
-
-                    _context.SaveChanges();
-                }
-
-            }
-            catch (Exception ex)
-            {
-                result.success = false;
-                result.AddError(ex.Message);
-            }
-            return result;
-        }
-
-        #endregion*/
+        
         public Result<List<Users>> GetAllUsers(long siteid, int pageId, int pageSize, ref int count)
         {
             Result<List<Users>> result = new Result<List<Users>>();
@@ -369,7 +238,7 @@ namespace WebApp.Identity
             }
             return result;
         }
-
+        
 
         public void Dispose()
         {

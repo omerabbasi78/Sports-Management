@@ -10,6 +10,7 @@ using WebApp.Models;
 using Repository.Pattern.UnitOfWork;
 using Repository.Pattern.Infrastructure;
 using Repository.Pattern;
+using WebApp.HelperClass;
 
 namespace WebApp.Controllers
 {
@@ -26,7 +27,26 @@ namespace WebApp.Controllers
             _unitOfWork = unitOfWork;
         }
         // GET: Events
-        public ActionResult Index(int id=0)
+        public ActionResult Index()
+        {
+            IEnumerable<EventsViewModels> model = new List<EventsViewModels>();
+            model = _eventService.QueryableCustom().Select(s=> new EventsViewModels {
+                DateCreated=s.DateCreated,
+                EndDate=s.EndDate,
+                EventId=s.EventId,
+                EventName=s.EventName,
+                SportId=s.SportId,
+                SportName=s.Sport.SportName,
+                StartDate=s.StartDate,
+                UserId=s.UserId,
+                VenueId=s.VenueId,
+                VenueName=s.Venue.VenueName
+            });
+            return View(model);
+        }
+
+
+        public ActionResult Detail(int id = 0)
         {
             EventsViewModels model = new EventsViewModels();
             if (id > 0)
@@ -37,15 +57,19 @@ namespace WebApp.Controllers
                     model = Mapper.Map<EventsViewModels>(result.data);
                 }
             }
-            model.SportsList = _sportsService.Queryable().data;
+            var resultt = _sportsService.Queryable();
+            model.SportsList = resultt.data;
             return View(model);
         }
 
         [HttpPost]
-        public ActionResult Index(EventsViewModels model)
+        public ActionResult Detail(EventsViewModels model)
         {
             Events dto = Mapper.Map<Events>(model);
             dto.ObjectState = dto.EventId > 0 ? ObjectState.Modified : ObjectState.Added;
+            dto.VenueId = 1;
+            dto.DateCreated = dto.EventId > 0 ? dto.DateCreated : DateTime.Now;
+            dto.UserId = Common.CurrentUser.Id;
             _eventService.InsertOrUpdateGraph(dto);
             saveResult = _unitOfWork.SaveChanges();
             if (saveResult.success)

@@ -29,12 +29,17 @@ namespace WebApp.ViewModels
 
 
         public int SportId { get; set; }
-        public Sports Sport { get; set; }
+        [Display(Name = "Sport Name")]
+        public string SportName { get; set; }
 
         public long UserId { get; set; }
-        public Users User { get; set; }
-        public Venues Venue { get; set; }
+        public IEnumerable<Venues> Venue { get; set; }
         public int VenueId { get; set; }
+        [Display(Name = "Venue Name")]
+        public string VenueName { get; set; }
+
         public IEnumerable<Sports> SportsList { get; set; }
+
+        public bool IsActive { get; set; }
     }
 }

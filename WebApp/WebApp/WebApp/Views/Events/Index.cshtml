@@ -1,7 +1,34 @@
-﻿
+﻿@model IEnumerable<EventsViewModels>
 @{
     ViewBag.Title = "Events";
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
-
-
+<a href="/Events/Detail">Add Event</a>
+@if (Model != null)
+{
+    foreach (var item in Model)
+    {
+        @Html.HiddenFor(model => item.EventId)
+    <div class="row">
+        <div class="col-md-12">
+            <div class="row">
+                <div class="col-md-2">
+                    @Html.DisplayFor(model => item.EventName)
+                </div>
+                <div class="col-md-2">
+                    @Html.DisplayFor(model => item.SportName)
+                </div>
+                <div class="col-md-2">
+                    @Html.DisplayFor(model => item.VenueName)
+                </div>
+                <div class="col-md-2">
+                    @Html.DisplayFor(model => item.StartDate)
+                </div>
+                <div class="col-md-2">
+                    @Html.DisplayFor(model => item.EndDate)
+                </div>
+            </div>
+        </div>
+    </div>
+    }
+}

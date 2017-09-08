@@ -22,7 +22,7 @@ namespace WebApp.AutoMapper
         private void ConfigureMappings()
         {
             CreateMap<RegisterViewModel, Users>().ReverseMap();
-
+            CreateMap<EventsViewModels, Events>().ReverseMap();
 
         }
     }
