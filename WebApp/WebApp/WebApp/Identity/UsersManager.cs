@@ -120,9 +120,9 @@ namespace WebApp.Identity
 
         }
 
-        public List<Users> GetAllUsers(long siteid, int pageId, int pageSize, ref int count)
+        public List<Users> GetAllUsersPaged(int pageId, int pageSize, ref int count)
         {
-            Result<List<Users>> result = userStoreService.GetAllUsers(siteid, pageId, pageSize, ref count);
+            Result<List<Users>> result = userStoreService.GetAllUsersPaged(pageId, pageSize, ref count);
             if (result.data == null)
             {
                 result.success = false;
@@ -132,6 +132,17 @@ namespace WebApp.Identity
             return result.data;
         }
 
+        public List<Users> GetAllUsers()
+        {
+            Result<List<Users>> result = userStoreService.GetAllUsers();
+            if (result.data == null)
+            {
+                result.success = false;
+                result.AddError("No user found");
+                return null;
+            }
+            return result.data;
+        }
 
 
         public Result<Users> SignIn(LoginViewModel model)
@@ -148,6 +159,7 @@ namespace WebApp.Identity
                     claims.Add(new Claim(ClaimTypes.Name, user.Name));
                     claims.Add(new Claim(ClaimTypes.NameIdentifier, user.UserName));
                     claims.Add(new Claim("UserId", user.Id.ToString()));
+                    claims.Add(new Claim("IsTeam", user.IsTeam.ToString()));
                     try
                     {
                         claims.Add(new Claim("ProfilePic", user.ProfilePic));

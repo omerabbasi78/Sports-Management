@@ -9,6 +9,12 @@
     foreach (var item in Model)
     {
         @Html.HiddenFor(model => item.EventId)
+        if (item.UserId==WebApp.HelperClass.Common.CurrentUser.Id)
+        {
+            <a href="/Events/Detail/@item.EventId">Edit</a>
+            <a href="/Events/Detail/@item.EventId">Delete</a>
+            <a href="/Events/Detail/@item.EventId">Challenge</a>
+        }
     <div class="row">
         <div class="col-md-12">
             <div class="row">

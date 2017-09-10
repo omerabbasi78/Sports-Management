@@ -30,6 +30,7 @@ namespace WebApp.HelperClass
                     user.Name = claimsIdentity.FindFirst(ClaimTypes.Name).Value;
                     user.Email = claimsIdentity.FindFirst(ClaimTypes.Email).Value;
                     user.UserName = claimsIdentity.FindFirst(ClaimTypes.NameIdentifier).Value;
+                    user.IsTeam = Convert.ToBoolean(claimsIdentity.FindFirst("IsTeam").Value);
                     user.ProfilePic = claimsIdentity.FindFirst("ProfilePic").Value;
                     return user;
                 }

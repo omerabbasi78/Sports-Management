@@ -215,7 +215,7 @@ namespace WebApp.Identity
 
         #endregion
         
-        public Result<List<Users>> GetAllUsers(long siteid, int pageId, int pageSize, ref int count)
+        public Result<List<Users>> GetAllUsersPaged(int pageId, int pageSize, ref int count)
         {
             Result<List<Users>> result = new Result<List<Users>>();
             try
@@ -238,7 +238,31 @@ namespace WebApp.Identity
             }
             return result;
         }
-        
+
+        public Result<List<Users>> GetAllUsers()
+        {
+            Result<List<Users>> result = new Result<List<Users>>();
+            try
+            {
+                List<Users> users = _context.User.Where(u => u.IsActive).OrderByDescending(i => i.Name).ToList();
+                if (users != null && users.Count > 0)
+                    result.data = users;
+                else
+                {
+                    result.success = false;
+                    result.AddError("No user found");
+                }
+
+
+            }
+            catch (Exception ex)
+            {
+                result.success = false;
+                result.AddError(ex.Message);
+            }
+            return result;
+        }
+
 
         public void Dispose()
         {

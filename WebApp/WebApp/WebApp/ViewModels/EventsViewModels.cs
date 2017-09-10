@@ -42,4 +42,34 @@ namespace WebApp.ViewModels
 
         public bool IsActive { get; set; }
     }
+
+    public class ChallengeEvent
+    {
+
+        public int UserChallengeId { get; set; }
+        public int EventId { get; set; }
+        [Display(Name = "Event Name")]
+        public string EventName { get; set; }
+        [Display(Name = "Venue Name")]
+        public string VenueName { get; set; }
+
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [Display(Name = "Event Start Date")]
+        public DateTime StartDate { get; set; }
+        [DisplayFormat(DataFormatString = "{0:MM/dd/yyyy}")]
+        [Display(Name = "Event End Date")]
+        public DateTime EndDate { get; set; }
+
+        public long UserId { get; set; }
+        public long ToChallengeId { get; set; }
+        public IEnumerable<Users> ToChallengeList { get; set; }
+        public IEnumerable<ToChallenge> ToSelectedChallengesList { get; set; }
+    }
+
+
+    public class ToChallenge
+    {
+        public long Id { get; set; }
+        public string Name { get; set; }
+    }
 }

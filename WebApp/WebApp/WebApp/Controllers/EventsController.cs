@@ -11,6 +11,7 @@ using Repository.Pattern.UnitOfWork;
 using Repository.Pattern.Infrastructure;
 using Repository.Pattern;
 using WebApp.HelperClass;
+using WebApp.Identity;
 
 namespace WebApp.Controllers
 {
@@ -19,18 +20,20 @@ namespace WebApp.Controllers
         Result<int> saveResult = new Result<int>();
         IEventsService _eventService;
         ISportsService _sportsService;
+        IUserChallengesService _challengeService;
         private readonly IUnitOfWorkAsync _unitOfWork;
-        public EventsController(IEventsService eventService, ISportsService sportsService, IUnitOfWorkAsync unitOfWork)
+        public EventsController(IEventsService eventService, ISportsService sportsService, IUserChallengesService challengeService, IUnitOfWorkAsync unitOfWork)
         {
             _eventService = eventService;
             _sportsService = sportsService;
+            _challengeService = challengeService;
             _unitOfWork = unitOfWork;
         }
         // GET: Events
         public ActionResult Index()
         {
             IEnumerable<EventsViewModels> model = new List<EventsViewModels>();
-            model = _eventService.QueryableCustom().Select(s=> new EventsViewModels {
+            model = _eventService.QueryableCustom().Where(w=>w.IsActive).Select(s=> new EventsViewModels {
                 DateCreated=s.DateCreated,
                 EndDate=s.EndDate,
                 EventId=s.EventId,
@@ -82,6 +85,47 @@ namespace WebApp.Controllers
                 model.SportsList = _sportsService.Queryable().data;
                 return View(model);
             }
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Delete(int id)
+        {
+            var result = _sportsService.Delete(id);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Challenge(int id)
+        {
+            //eventid
+            UsersManager manager = new UsersManager();
+            ChallengeEvent model = new ChallengeEvent();
+            model = _eventService.QueryableCustom().Where(w=>w.EventId==id).Select(s => new ChallengeEvent
+            {
+                EndDate = s.EndDate,
+                EventId = s.EventId,
+                EventName = s.EventName,
+                StartDate = s.StartDate,
+                VenueName = s.Venue.VenueName
+            }).FirstOrDefault();
+            if (model != null)
+            {
+                model.ToSelectedChallengesList = _challengeService.QueryableCustom().Where(w => w.EventId == id).Select(s => new ToChallenge
+                {
+                    Name = s.ToChallenge.Name,
+                    Id = s.ToChallengeId
+
+                }).ToList();
+                model.ToChallengeList = manager.GetAllUsers();
+            }
+            
+            return RedirectToAction("_challenge", model);
+        }
+
+        [HttpPost]
+        public ActionResult Challenge(ChallengeEvent model)
+        {
+            //eventid
+            
             return RedirectToAction("Index");
         }
     }
