@@ -1,5 +1,7 @@
 ﻿using Repository.Pattern.Ef6;
 using System;
+using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -7,6 +9,10 @@ namespace WebApp.Models
 {
     public class Events : Entity
     {
+        public Events()
+        {
+            Ticket = new HashSet<Tickets>();
+        }
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int EventId { get; set; }
@@ -35,5 +41,11 @@ namespace WebApp.Models
         public Venues Venue { get; set; }
         public int VenueId { get; set; }
 
+        [DefaultValue(true)]
+        public bool IsFree { get; set; }
+        public int TotalTicketAllowed { get; set; }
+
+        
+        public virtual ICollection<Tickets> Ticket { get; set; }
     }
 }

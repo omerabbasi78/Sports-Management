@@ -21,7 +21,7 @@
                         </li>
                     }
 
-                    @if (Request.Url.ToString().ToLower().Contains("/events/"))
+                    @if (Request.Url.ToString().ToLower().Contains("/events"))
                     {
                         <li class="active">
                             <a href="~/Events/Index"><i class="fa fa-calendar"></i> <span class="nav-label">Events</span></a>
@@ -34,7 +34,7 @@
                         </li>
                     }
 
-                    @if (Request.Url.ToString().ToLower().Contains("/user/"))
+                    @if (Request.Url.ToString().ToLower().Contains("/user/editprofile"))
                     {
                         <li class="active">
                             <a href="~/User/EditProfile"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
@@ -46,7 +46,7 @@
                             <a href="~/User/EditProfile"><i class="fa fa-user"></i> <span class="nav-label">Profile</span></a>
                         </li>
                     }
-                    @if (Request.Url.ToString().ToLower().Contains("/venue/"))
+                    @if (Request.Url.ToString().ToLower().Contains("/venue"))
                     {
                         <li class="active">
                             <a href="~/Venue/Index"><i class="fa fa-street-view"></i> <span class="nav-label">Venue</span></a>
@@ -59,10 +59,25 @@
                         </li>
                     }
 
-                    @if (Request.Url.ToString().ToLower().Contains("/ticket/"))
+                    @if (WebApp.HelperClass.Common.CurrentUser.IsSuperAdmin)
+                    {
+                        if (Request.Url.ToString().ToLower().Contains("/sports"))
+                        {
+                            <li class="active">
+                                <a href="~/Sports/Index"><i class="fa fa-futbol-o"></i> <span class="nav-label">Sport</span></a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="~/Sports/Index"><i class="fa fa-futbol-o"></i> <span class="nav-label">Sport</span></a>
+                            </li>
+                        }
+                    }
+                    @if (Request.Url.ToString().ToLower().Contains("/ticket"))
                     {
                         <li class="active">
-                            <a href="~/Ticket/Index"><i class="fa fa-buy"></i> <span class="nav-label">Buy Ticket</span></a>
+                            <a href="~/Ticket/Index"><i class="fa fa-ticket"></i> <span class="nav-label">Buy Ticket</span></a>
                         </li>
                     }
                     else
@@ -71,6 +86,24 @@
                             <a href="~/Ticket/Index"><i class="fa fa-ticket"></i> <span class="nav-label">Buy Ticket</span></a>
                         </li>
                     }
+
+
+                    @if (WebApp.HelperClass.Common.CurrentUser.IsSuperAdmin)
+                    {
+                        if (Request.Url.ToString().ToLower().Contains("/user/index"))
+                        {
+                            <li class="active">
+                                <a href="~/User/Index"><i class="fa fa-users"></i> <span class="nav-label">Users</span></a>
+                            </li>
+                        }
+                        else
+                        {
+                            <li>
+                                <a href="~/User/Index"><i class="fa fa-users"></i> <span class="nav-label">Users</span></a>
+                            </li>
+                        }
+                    }
+
                     <!--Notification Menu-->
                     <li class="dropdown notification-menu">
                         <a href="#!" data-toggle="dropdown" aria-expanded="false" class="dropdown-toggle">

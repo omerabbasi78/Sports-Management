@@ -20,13 +20,15 @@ namespace WebApp.Controllers
         Result<int> saveResult = new Result<int>();
         IEventsService _eventService;
         ISportsService _sportsService;
+        IVenueService _venueService;
         IUserChallengesService _challengeService;
         private readonly IUnitOfWorkAsync _unitOfWork;
-        public EventsController(IEventsService eventService, ISportsService sportsService, IUserChallengesService challengeService, IUnitOfWorkAsync unitOfWork)
+        public EventsController(IEventsService eventService, ISportsService sportsService, IUserChallengesService challengeService, IVenueService venueService, IUnitOfWorkAsync unitOfWork)
         {
             _eventService = eventService;
             _sportsService = sportsService;
             _challengeService = challengeService;
+            _venueService = venueService;
             _unitOfWork = unitOfWork;
         }
         // GET: Events
@@ -43,7 +45,10 @@ namespace WebApp.Controllers
                 StartDate=s.StartDate,
                 UserId=s.UserId,
                 VenueId=s.VenueId,
-                VenueName=s.Venue.VenueName
+                VenueName=s.Venue.VenueName,
+                IsFree = s.IsFree,
+                TotalTicketAllowed = s.TotalTicketAllowed,
+                TotalBoughtTickets = s.Ticket.Where(w =>w.EventId == s.EventId && w.IsActive).Count()
             });
             return View(model);
         }
@@ -60,8 +65,10 @@ namespace WebApp.Controllers
                     model = Mapper.Map<EventsViewModels>(result.data);
                 }
             }
-            var resultt = _sportsService.Queryable();
-            model.SportsList = resultt.data;
+            var sport = _sportsService.Queryable();
+            var venue = _venueService.Queryable();
+            model.SportsList = sport.data;
+            model.VenueList = venue.data;
             return View(model);
         }
 
@@ -70,7 +77,9 @@ namespace WebApp.Controllers
         {
             Events dto = Mapper.Map<Events>(model);
             dto.ObjectState = dto.EventId > 0 ? ObjectState.Modified : ObjectState.Added;
-            dto.VenueId = 1;
+            dto.VenueId = model.VenueId;
+            dto.SportId = model.SportId;
+            dto.IsActive = true;
             dto.DateCreated = dto.EventId > 0 ? dto.DateCreated : DateTime.Now;
             dto.UserId = Common.CurrentUser.Id;
             _eventService.InsertOrUpdateGraph(dto);
@@ -83,6 +92,7 @@ namespace WebApp.Controllers
             {
                 AddErrors(saveResult.errors, saveResult.ErrorMessage);
                 model.SportsList = _sportsService.Queryable().data;
+                model.VenueList = _venueService.Queryable().data;
                 return View(model);
             }
             return RedirectToAction("Index");
@@ -91,34 +101,36 @@ namespace WebApp.Controllers
         public ActionResult Delete(int id)
         {
             var result = _sportsService.Delete(id);
+            saveResult = _unitOfWork.SaveChanges();
             return RedirectToAction("Index");
         }
 
-        public ActionResult Challenge(int id)
+        public ActionResult Challenge(int id =0)
         {
+            return PartialView("_challenge");
             //eventid
-            UsersManager manager = new UsersManager();
-            ChallengeEvent model = new ChallengeEvent();
-            model = _eventService.QueryableCustom().Where(w=>w.EventId==id).Select(s => new ChallengeEvent
-            {
-                EndDate = s.EndDate,
-                EventId = s.EventId,
-                EventName = s.EventName,
-                StartDate = s.StartDate,
-                VenueName = s.Venue.VenueName
-            }).FirstOrDefault();
-            if (model != null)
-            {
-                model.ToSelectedChallengesList = _challengeService.QueryableCustom().Where(w => w.EventId == id).Select(s => new ToChallenge
-                {
-                    Name = s.ToChallenge.Name,
-                    Id = s.ToChallengeId
+            //UsersManager manager = new UsersManager();
+            //ChallengeEvent model = new ChallengeEvent();
+            //model = _eventService.QueryableCustom().Where(w=>w.EventId==id).Select(s => new ChallengeEvent
+            //{
+            //    EndDate = s.EndDate,
+            //    EventId = s.EventId,
+            //    EventName = s.EventName,
+            //    StartDate = s.StartDate,
+            //    VenueName = s.Venue.VenueName
+            //}).FirstOrDefault();
+            //if (model != null)
+            //{
+            //    model.ToSelectedChallengesList = _challengeService.QueryableCustom().Where(w => w.EventId == id).Select(s => new ToChallenge
+            //    {
+            //        Name = s.ToChallenge.Name,
+            //        Id = s.ToChallengeId
 
-                }).ToList();
-                model.ToChallengeList = manager.GetAllUsers();
-            }
+            //    }).ToList();
+            //    model.ToChallengeList = manager.GetAllUsers();
+            //}
             
-            return RedirectToAction("_challenge", model);
+            //return RedirectToAction("_challenge", model);
         }
 
         [HttpPost]

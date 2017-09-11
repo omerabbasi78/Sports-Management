@@ -67,7 +67,7 @@ namespace WebApp.Identity
         {
             Users oldUser = _context.User.Where(w => w.Id == user.Id).FirstOrDefault();
             Users nameUser = _context.User.Where(w => w.UserName == user.UserName && w.IsActive && w.Id != user.Id).FirstOrDefault();
-            
+
             if (nameUser != null)
             {
                 //sorry app nhi kr skty pehly mojood hy
@@ -88,7 +88,7 @@ namespace WebApp.Identity
                 //user.Name = oldUser.Name;
                 user.Password = oldUser.Password;
                 //user.ProfilePic = oldUser.ProfilePic;
-                user.TempPassword= oldUser.TempPassword;
+                user.TempPassword = oldUser.TempPassword;
                 //user.TotalMembers = oldUser.TotalMembers;
                 //user.UserName = oldUser.UserName;
 
@@ -128,7 +128,7 @@ namespace WebApp.Identity
             return result;
         }
 
-        
+
 
         #endregion
 
@@ -214,7 +214,7 @@ namespace WebApp.Identity
         #region CustomMethod
 
         #endregion
-        
+
         public Result<List<Users>> GetAllUsersPaged(int pageId, int pageSize, ref int count)
         {
             Result<List<Users>> result = new Result<List<Users>>();
@@ -244,7 +244,8 @@ namespace WebApp.Identity
             Result<List<Users>> result = new Result<List<Users>>();
             try
             {
-                List<Users> users = _context.User.Where(u => u.IsActive).OrderByDescending(i => i.Name).ToList();
+                List<Users> users = new List<Users>();
+                users = _context.User.Where(u => u.IsActive).OrderByDescending(i => i.Name).ToList();
                 if (users != null && users.Count > 0)
                     result.data = users;
                 else

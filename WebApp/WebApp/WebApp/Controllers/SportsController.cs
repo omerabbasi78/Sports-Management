@@ -11,44 +11,43 @@ using WebApp.Services;
 
 namespace WebApp.Controllers
 {
-    public class VenueController : BaseController
+    public class SportsController : BaseController
     {
+
         Result<int> saveResult = new Result<int>();
-        IVenueService _venueService;
+        ISportsService _sportsService;
         private readonly IUnitOfWorkAsync _unitOfWork;
-        public VenueController(IVenueService venueService, IUnitOfWorkAsync unitOfWork)
+
+        public SportsController(ISportsService sportsService, IUnitOfWorkAsync unitOfWork)
         {
-            _venueService = venueService;
+            _sportsService = sportsService;
             _unitOfWork = unitOfWork;
         }
-        // GET: Venue
+        // GET: Sports
         public ActionResult Index()
         {
-            IEnumerable<Venues> model = new List<Venues>();
-            model = _venueService.Queryable().data;
+            IEnumerable<Sports> model = new List<Sports>();
+            model = _sportsService.Queryable().data;
             return View(model);
         }
 
-
-
-
         public ActionResult Detail(int id = 0)
         {
-            Result<Venues> model = new Result<Venues>();
+            Result<Sports> model = new Result<Sports>();
             if (id > 0)
             {
-                model = _venueService.Find(id);
+                model = _sportsService.Find(id);
                 return View(model.data);
             }
-            
+
             return View(model.data);
         }
 
         [HttpPost]
-        public ActionResult Detail(Venues model)
+        public ActionResult Detail(Sports model)
         {
-            model.ObjectState = model.VenueId > 0 ? ObjectState.Modified : ObjectState.Added;
-            _venueService.InsertOrUpdateGraph(model);
+            model.ObjectState = model.SportId > 0 ? ObjectState.Modified : ObjectState.Added;
+            _sportsService.InsertOrUpdateGraph(model);
             saveResult = _unitOfWork.SaveChanges();
             if (saveResult.success)
             {
@@ -65,7 +64,7 @@ namespace WebApp.Controllers
 
         public ActionResult Delete(int id)
         {
-            var result = _venueService.Delete(id);
+            var result = _sportsService.Delete(id);
             saveResult = _unitOfWork.SaveChanges();
             return RedirectToAction("Index");
         }

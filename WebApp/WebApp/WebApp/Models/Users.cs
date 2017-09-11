@@ -56,7 +56,7 @@ namespace WebApp.Models
         public bool IsTeam { get; set; }
         [Display(Name = "Total Members")]
         public int TotalMembers { get; set; }
-
+        public bool IsSuperAdmin { get; set; }
         public void Dispose()
         {
 

@@ -9,7 +9,7 @@ using WebApp.ViewModels;
 
 namespace WebApp.Repositories
 {
-    public static class EventsRepository
+    public static class UserChallengesRepository
     {
         //public static IEnumerable<MenuItems> GetAllGroups(this IRepositoryAsync<MenuItems> repository)
         //{

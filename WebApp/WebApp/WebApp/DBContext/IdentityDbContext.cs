@@ -41,5 +41,7 @@ namespace WebApp
         public DbSet<Events> Events { get; set; }
         public DbSet<Sports> Sports { get; set; }
         public DbSet<Venues> Venues { get; set; }
+        public DbSet<Tickets> Tickets { get; set; }
+        //public DbSet<UserChallenges> UserChallenges { get; set; }
     }
 }

@@ -160,6 +160,7 @@ namespace WebApp.Identity
                     claims.Add(new Claim(ClaimTypes.NameIdentifier, user.UserName));
                     claims.Add(new Claim("UserId", user.Id.ToString()));
                     claims.Add(new Claim("IsTeam", user.IsTeam.ToString()));
+                    claims.Add(new Claim("IsSuperAdmin", user.IsSuperAdmin.ToString()));
                     try
                     {
                         claims.Add(new Claim("ProfilePic", user.ProfilePic));

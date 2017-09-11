@@ -13,5 +13,6 @@ namespace WebApp.ViewModels
         public string Email { get; set; }
         public string ProfilePic { get; set; }
         public bool IsTeam { get; set; }
+        public bool IsSuperAdmin { get; set; }
     }
 }

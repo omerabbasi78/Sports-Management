@@ -63,9 +63,16 @@ namespace WebApp.App_Start
 
             container.RegisterType<IEventsService, EventsService>();
             container.RegisterType<IRepositoryAsync<Events>, Repository<Events>>();
+
             container.RegisterType<ISportsService, SportsService>();
             container.RegisterType<IRepositoryAsync<Sports>, Repository<Sports>>();
+
             container.RegisterType<IRepositoryAsync<UserChallenges>, Repository<UserChallenges>>();
+            container.RegisterType<IUserChallengesService, UserChallengesService>();
+
+            container.RegisterType<IRepositoryAsync<Venues>, Repository<Venues>>();
+            container.RegisterType<IVenueService, VenueService>();
+            
         }
     }
 }

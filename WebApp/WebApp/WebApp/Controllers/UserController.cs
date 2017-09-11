@@ -6,6 +6,7 @@ using WebApp.Models;
 using AutoMapper;
 using WebApp.ViewModels;
 using System.Web;
+using System.Collections.Generic;
 
 namespace WebApp.Controllers
 {
@@ -16,6 +17,15 @@ namespace WebApp.Controllers
         {
             _usermanager = new UsersManager();
         }
+
+        public ActionResult Index()
+        {
+            List<Users> model = new List<Users>();
+            model = _usermanager.GetAllUsers();
+            return View(model);
+        }
+
+
         // GET: User
         public ActionResult EditProfile()
         {

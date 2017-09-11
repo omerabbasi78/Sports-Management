@@ -33,14 +33,19 @@ namespace WebApp.ViewModels
         public string SportName { get; set; }
 
         public long UserId { get; set; }
-        public IEnumerable<Venues> Venue { get; set; }
+        public IEnumerable<Venues> VenueList { get; set; }
         public int VenueId { get; set; }
+        
+
         [Display(Name = "Venue Name")]
         public string VenueName { get; set; }
 
         public IEnumerable<Sports> SportsList { get; set; }
 
         public bool IsActive { get; set; }
+        public bool IsFree { get; set; }
+        public int TotalTicketAllowed { get; set; }
+        public int TotalBoughtTickets { get; set; }
     }
 
     public class ChallengeEvent
