@@ -28,7 +28,7 @@ namespace WebApp.Identity
 
         public UserStoreService()
         {
-            //_context = new IdentityDbContext();
+            _context = new ApplicationDbContext();
         }
 
         public UserStoreService(ApplicationDbContext context)

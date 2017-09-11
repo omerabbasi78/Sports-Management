@@ -263,6 +263,7 @@
     <Compile Include="AutoMapper\Profiles\ViewModelMappingProfile.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\ChatController.cs" />
     <Compile Include="Controllers\EventsController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\SportsController.cs" />
@@ -16410,6 +16411,7 @@
     <Content Include="Views\User\Index.cshtml" />
     <Content Include="Views\Venue\Detail.cshtml" />
     <Content Include="Views\Venue\Index.cshtml" />
+    <Content Include="Views\Chat\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
