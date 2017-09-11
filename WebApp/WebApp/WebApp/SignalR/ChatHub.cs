@@ -5,9 +5,11 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using System.Linq;
 using WebApp.HelperClass;
+using Microsoft.AspNet.SignalR.Hubs;
 
 namespace WebApp.SignalRChat
 {
+    [HubName("signalRChatHub")]
     public class ChatHub : Hub
     {
         public void Send(string name, string message)
