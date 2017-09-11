@@ -336,6 +336,8 @@ E:\Github projects\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Github projects\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
 E:\Github projects\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 E:\Github projects\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.initial.resources
+C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.Cache
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\ApplicationInsights.config
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\csc.exe
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\roslyn\Microsoft.Build.Tasks.CodeAnalysis.dll
@@ -442,10 +444,8 @@ E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Sec
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Google.xml
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.Twitter.xml
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\bin\Microsoft.Owin.Security.MicrosoftAccount.xml
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.initial.resources
+E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.Initial.resources
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.Cache
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
-E:\Github projects\Sports Management\WebApp\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
-C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.initial.resources
-C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.Cache
