@@ -105,4 +105,4 @@ WebApp/WebApp/WebApp/bin/roslyn/vbc.exe
 WebApp/WebApp/WebApp/obj/Debug/WebApp.csprojResolveAssemblyReference.cache
 WebApp/WebApp/WebApp/obj/Debug/WebApp.dll
 WebApp/WebApp/WebApp/obj/Debug/WebApp.pdb
-WebApp/WebApp/.vs/
+WebApp/WebApp/.vs/config/applicationhost.config
