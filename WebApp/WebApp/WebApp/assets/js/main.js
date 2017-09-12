@@ -39,7 +39,6 @@ $(window).on('load', function() {
         });
     };
 
-    notify('Welcome to Able Admin', 'inverse');
     $('.loader-bg').fadeOut('slow');
 
 });

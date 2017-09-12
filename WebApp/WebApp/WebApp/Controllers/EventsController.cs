@@ -107,37 +107,49 @@ namespace WebApp.Controllers
 
         public ActionResult ChallengeUsers(int id =0)
         {
-            return PartialView("_challenge");
+            //return PartialView("_challenge");
             //eventid
-            //UsersManager manager = new UsersManager();
-            //ChallengeEvent model = new ChallengeEvent();
-            //model = _eventService.QueryableCustom().Where(w=>w.EventId==id).Select(s => new ChallengeEvent
-            //{
-            //    EndDate = s.EndDate,
-            //    EventId = s.EventId,
-            //    EventName = s.EventName,
-            //    StartDate = s.StartDate,
-            //    VenueName = s.Venue.VenueName
-            //}).FirstOrDefault();
-            //if (model != null)
-            //{
-            //    model.ToSelectedChallengesList = _challengeService.QueryableCustom().Where(w => w.EventId == id).Select(s => new ToChallenge
-            //    {
-            //        Name = s.ToChallenge.Name,
-            //        Id = s.ToChallengeId
+            UsersManager manager = new UsersManager();
+            ChallengeEvent model = new ChallengeEvent();
+            model = _eventService.QueryableCustom().Where(w => w.EventId == id).Select(s => new ChallengeEvent
+            {
+                EndDate = s.EndDate,
+                EventId = s.EventId,
+                EventName = s.EventName,
+                StartDate = s.StartDate,
+                VenueName = s.Venue.VenueName
+            }).FirstOrDefault();
+            if (model != null)
+            {
+                model.ToSelectedChallengesList = _challengeService.QueryableCustom().Where(w => w.EventId == id).Select(s => new ToChallenge
+                {
+                    Name = s.ToChallenge.Name,
+                    Id = (long)s.ToChallengeId
 
-            //    }).ToList();
-            //    model.ToChallengeList = manager.GetAllUsers();
-            //}
-            
-            //return RedirectToAction("_challenge", model);
+                }).ToList();
+                model.ToChallengeList = manager.GetAllUsers();
+                if (model.ToChallengeList != null)
+                {
+                    model.ToChallengeList = model.ToChallengeList.Where(w => w.IsActive);
+                }
+            }
+
+            return PartialView("_challenge", model);
         }
 
         [HttpPost]
-        public ActionResult Challenge(ChallengeEvent model)
+        public ActionResult Challenge(ChallengeEvent model, int[] Id)
         {
             //eventid
-            
+            Notifications notification = new Notifications();
+            notification.ObjectState = ObjectState.Added;
+            notification.Notification = Common.CurrentUser.Name + " Challenged you for the event "+model.EventName;
+            //notification.Link = "/Scheduler/OrderDetailEdit/" + invoice.InvoiceId;
+            notification.IsRead = false;
+            notification.Icon = "fa fa-plus-square fa-lg";
+            notification.UserId = model.ToChallengeId;
+            notification.NotificationDate = DateTime.Now;
+
             return RedirectToAction("Index");
         }
     }

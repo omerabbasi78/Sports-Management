@@ -20,11 +20,11 @@ namespace WebApp.Models
 
 
         [Display(Name = "Challenger")]
-        public long UserId { get; set; }
+        public long? UserId { get; set; }
         [ForeignKey("UserId")]
         public Users User { get; set; }
         [Display(Name = "To Challenge")]
-        public long ToChallengeId { get; set; }
+        public long? ToChallengeId { get; set; }
         [ForeignKey("ToChallengeId")]
         public Users ToChallenge { get; set; }
 

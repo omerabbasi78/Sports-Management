@@ -12,5 +12,6 @@ namespace WebApp.Services
 {
     public interface INotificationsService : IService<Notifications>
     {
+        IEnumerable<Notifications> GetNotificationByUserId(long userId);
     }
 }

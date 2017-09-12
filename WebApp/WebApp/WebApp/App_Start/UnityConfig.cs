@@ -72,7 +72,10 @@ namespace WebApp.App_Start
 
             container.RegisterType<IRepositoryAsync<Venues>, Repository<Venues>>();
             container.RegisterType<IVenueService, VenueService>();
-            
+
+            container.RegisterType<IRepositoryAsync<Notifications>, Repository<Notifications>>();
+            container.RegisterType<INotificationsService, NotificationsService>();
+
         }
     }
 }

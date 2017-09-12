@@ -13,9 +13,15 @@ namespace WebApp.Services
     public class NotificationsService : Service<Notifications>, INotificationsService
     {
         private readonly IRepositoryAsync<Notifications> _repository;
-        public NotificationsService(IRepositoryAsync<Notifications> repository) : base(repository)
+        public NotificationsService(IRepositoryAsync<Notifications> repository)
+            : base(repository)
         {
             _repository = repository;
+        }
+
+        public IEnumerable<Notifications> GetNotificationByUserId(long userId)
+        {
+            return _repository.GetNotificationByUserId(userId);
         }
 
     }

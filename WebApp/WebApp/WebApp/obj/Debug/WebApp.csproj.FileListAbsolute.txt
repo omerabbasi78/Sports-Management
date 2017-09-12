@@ -659,3 +659,4 @@ D:\Github Projects\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.Migrations.Initi
 D:\Github Projects\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.csproj.GenerateResource.Cache
 D:\Github Projects\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.dll
 D:\Github Projects\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.pdb
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
