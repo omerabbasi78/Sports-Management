@@ -16,7 +16,7 @@
     <AppDesignerFolder>Properties</AppDesignerFolder>
     <RootNamespace>WebApp</RootNamespace>
     <AssemblyName>WebApp</AssemblyName>
-    <TargetFrameworkVersion>v4.6.2</TargetFrameworkVersion>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <MvcBuildViews>false</MvcBuildViews>
     <UseIISExpress>true</UseIISExpress>
     <IISExpressSSLPort />
@@ -144,9 +144,9 @@
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
-    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.Abstractions" />
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Web.Routing" />
     <Reference Include="System.Xml" />
     <Reference Include="System.Configuration" />
@@ -297,15 +297,19 @@
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Events.cs" />
+    <Compile Include="Models\Notifications.cs" />
     <Compile Include="Models\Sports.cs" />
     <Compile Include="Models\Tickets.cs" />
     <Compile Include="Models\UserChallenges.cs" />
     <Compile Include="Models\Users.cs" />
     <Compile Include="Models\Venues.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Repositories\Notifications\NotificationsRepository.cs" />
     <Compile Include="Repositories\Events\EventsRepository.cs" />
     <Compile Include="Repositories\Sports\SportsRepository.cs" />
     <Compile Include="Repositories\UserChallenges\UserChallengesRepository.cs" />
+    <Compile Include="Services\Notifications\NotificationsService.cs" />
+    <Compile Include="Services\Notifications\INotificationsService.cs" />
     <Compile Include="Services\Events\EventsService.cs" />
     <Compile Include="Services\Events\IEventsService.cs" />
     <Compile Include="Services\Sports\ISportsService.cs" />

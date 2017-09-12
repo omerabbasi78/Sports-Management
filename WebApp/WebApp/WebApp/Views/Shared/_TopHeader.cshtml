@@ -208,7 +208,7 @@
 
 
         $(document).ready(function () {
-            $.get("/Scheduler/GetNotification",
+            $.get("/Chat/GetNotification",
                     function (data) {
                         $('#notificationCount').text('You have '+ data.count +' notification');
                         $('#hdncount').val(data.count);
@@ -237,7 +237,7 @@
 
         var markRead=function(notificationId){
             var id=notificationId;
-            $.get("/Scheduler/MarkReadGetNotification/"+id,
+            $.get("/Chat/MarkReadGetNotification/"+id,
                     function (data) {
                         window.location=data.success;
                     })
