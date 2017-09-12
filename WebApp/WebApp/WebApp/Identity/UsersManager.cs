@@ -89,6 +89,13 @@ namespace WebApp.Identity
             return result;
         }
 
+        public Result<long> Activate(long userId)
+        {
+            Result<long> result = new Result<long>();
+            result = userStoreService.Activate(userId);
+            return result;
+        }
+
 
         public Result<long> CreateUser(Users newUser, ControllerBase controllerBase)
         {

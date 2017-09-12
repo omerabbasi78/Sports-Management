@@ -105,7 +105,7 @@ namespace WebApp.Controllers
             return RedirectToAction("Index");
         }
 
-        public ActionResult Challenge(int id =0)
+        public ActionResult ChallengeUsers(int id =0)
         {
             return PartialView("_challenge");
             //eventid

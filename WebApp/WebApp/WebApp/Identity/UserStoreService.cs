@@ -129,6 +129,38 @@ namespace WebApp.Identity
         }
 
 
+        public Result<long> Activate(long userId)
+        {
+            Result<long> result = new Result<long>();
+            try
+            {
+                Users user = _context.User.Where(u => u.Id == userId).FirstOrDefault();
+                if (user != null)
+                {
+                    user.IsActive = true;
+                    _context.Entry(user).State = EntityState.Modified;
+                    _context.SaveChanges();
+
+                }
+                else
+                {
+                    result.success = false;
+                    result.AddError("User does not exist in system");
+                }
+            }
+            catch (Exception ex)
+            {
+                result.success = false;
+                result.AddError(ex.Message);
+            }
+
+            return result;
+        }
+
+
+
+
+
 
         #endregion
 
@@ -245,7 +277,7 @@ namespace WebApp.Identity
             try
             {
                 List<Users> users = new List<Users>();
-                users = _context.User.Where(u => u.IsActive).OrderByDescending(i => i.Name).ToList();
+                users = _context.User.Where(u => u.IsSuperAdmin == false).OrderByDescending(i => i.Name).ToList();
                 if (users != null && users.Count > 0)
                     result.data = users;
                 else

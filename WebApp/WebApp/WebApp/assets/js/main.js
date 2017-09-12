@@ -33,8 +33,8 @@ $(window).on('load', function() {
                 exit: 'animated fadeOutRight'
             },
             offset: {
-                x: -30000,
-                y: -30000
+                x: 30,
+                y: 30
             }
         });
     };

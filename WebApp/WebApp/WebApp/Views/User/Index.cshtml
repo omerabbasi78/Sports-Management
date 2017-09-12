@@ -16,16 +16,34 @@
                     <b>Name</b>
                 </div>
                 <div class="col-md-2">
-                    <b>Username</b>
+                    <b>User Name</b>
                 </div>
+                <div class="col-md-2">
+                    <b>Email</b>
+                </div>
+                <div class="col-md-2">
+                    <b>Address</b>
+                </div>
+                <div class="col-md-2">
+                    <b>Date Created</b>
+                </div>
+                
             </div>
         </div>
     </div>
 
     foreach (var item in Model)
     {
-        
-        <a href="/Users/Delete/@item.Id" class="btn btn-outline pull-right animated tada" onclick="return confirm('Are you sure you want to delete?');">Block User</a>
+
+        if (item.IsActive)
+        {
+            <a href="/User/Delete/@item.Id" class="btn btn-outline pull-right animated tada" onclick="return confirm('Are you sure you want to block?');">Block User</a>
+        }
+        else
+        {
+            <a href="/User/Activate/@item.Id" class="btn btn-outline pull-right animated tada" onclick="return confirm('Are you sure you want to activate?');">Activate User</a>
+        }
+
 
 
         <div class="row">
@@ -33,6 +51,18 @@
                 <div class="row">
                     <div class="col-md-2">
                         @Html.DisplayFor(model => item.Name)
+                    </div>
+                    <div class="col-md-2">
+                        @Html.DisplayFor(model => item.UserName)
+                    </div>
+                    <div class="col-md-2">
+                        @Html.DisplayFor(model => item.Email)
+                    </div>
+                    <div class="col-md-2">
+                        @Html.DisplayFor(model => item.Address)
+                    </div>
+                    <div class="col-md-2">
+                        @Html.DisplayFor(model => item.DateCreated)
                     </div>
                 </div>
             </div>

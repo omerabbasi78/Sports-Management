@@ -71,5 +71,17 @@ namespace WebApp.Controllers
             }
             return View(registerModel);
         }
+
+        public ActionResult Delete(int id)
+        {
+            var result = _usermanager.Delete(id);
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Activate(int id)
+        {
+            var result = _usermanager.Activate(id);
+            return RedirectToAction("Index");
+        }
     }
 }
