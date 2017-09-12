@@ -11,10 +11,10 @@ namespace WebApp.SignalR
     public class NotificationHub : Hub
     {
         static List<UserConnection> uList = new List<UserConnection>();
-        public static void SendNotification(string text, string icon, string url)
+        public static void SendNotification(List<long> users,string text, string icon, string url)
         {
             var context = GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
-            List<string> usersList = uList.Where(w => w.CompanyId == Common.CurrentUser.CompanyId).Select(s => s.ConnectionID).ToList();
+            List<string> usersList = uList.Where(w => users.Contains(w.UserId)).Select(s => s.ConnectionID).ToList();
             context.Clients.Clients(usersList).broadcastMessage(text, icon, url);
         }
 
@@ -22,11 +22,7 @@ namespace WebApp.SignalR
         {
             //Get the UserId
             var us = new UserConnection();
-            us.CompanyId = Common.CurrentUser.CompanyId;
-            if (role.ToLower().Contains("owner"))
-            {
-                us.isAdmin = true;
-            }
+            us.UserId = Common.CurrentUser.Id;
             us.ConnectionID = Context.ConnectionId;
             uList.Add(us);
             return base.OnConnected();
@@ -41,11 +37,7 @@ namespace WebApp.SignalR
 
     class UserConnection
     {
-        public long CompanyId { set; get; }
-        public bool isAdmin { set; get; }
+        public long UserId { set; get; }
         public string ConnectionID { set; get; }
-        public string role { set; get; }
-        public long userId { set; get; }
-        public long invoiceId { set; get; }
     }
 }

@@ -56,13 +56,13 @@ $(document).ready(function() {
 
     /*chatbar js start*/
     /*chat box scroll*/
-    var a = $(window).height() - 50;
-    $(".main-friend-list ").slimScroll({
-        height: a,
-        allowPageScroll: false,
-        wheelStep: 5,
-        color: '#1b8bf9'
-    });
+    //var a = $(window).height() - 50;
+    //$(".main-friend-list ").slimScroll({
+    //    height: a,
+    //    allowPageScroll: false,
+    //    wheelStep: 5,
+    //    color: '#1b8bf9'
+    //});
 
     // search
     $("#search-friends").on("keyup", function() {

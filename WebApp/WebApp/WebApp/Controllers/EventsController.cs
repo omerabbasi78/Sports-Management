@@ -12,6 +12,7 @@ using Repository.Pattern.Infrastructure;
 using Repository.Pattern;
 using WebApp.HelperClass;
 using WebApp.Identity;
+using WebApp.SignalR;
 
 namespace WebApp.Controllers
 {
@@ -21,14 +22,16 @@ namespace WebApp.Controllers
         IEventsService _eventService;
         ISportsService _sportsService;
         IVenueService _venueService;
+        INotificationsService _notificationsService;
         IUserChallengesService _challengeService;
         private readonly IUnitOfWorkAsync _unitOfWork;
-        public EventsController(IEventsService eventService, ISportsService sportsService, IUserChallengesService challengeService, IVenueService venueService, IUnitOfWorkAsync unitOfWork)
+        public EventsController(IEventsService eventService, INotificationsService notificationsService, ISportsService sportsService, IUserChallengesService challengeService, IVenueService venueService, IUnitOfWorkAsync unitOfWork)
         {
             _eventService = eventService;
             _sportsService = sportsService;
             _challengeService = challengeService;
             _venueService = venueService;
+            _notificationsService = notificationsService;
             _unitOfWork = unitOfWork;
         }
         // GET: Events
@@ -138,18 +141,72 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Challenge(ChallengeEvent model, int[] Id)
+        public ActionResult Challenge(ChallengeEvent model, long[] Id)
         {
+            List<UserChallenges> userChallengesList = new List<UserChallenges>();
+            List<Notifications> notificationsList = new List<Notifications>();
+            userChallengesList = _challengeService.QueryableCustom().Where(w => w.EventId == model.EventId && w.IsActive).ToList();
+            foreach (var item in userChallengesList)
+            {
+                item.IsActive = false;
+                item.ObjectState = ObjectState.Modified;
+                _challengeService.InsertOrUpdateGraph(item);
+                _unitOfWork.SaveChanges();
+            }
             //eventid
-            Notifications notification = new Notifications();
-            notification.ObjectState = ObjectState.Added;
-            notification.Notification = Common.CurrentUser.Name + " Challenged you for the event "+model.EventName;
-            //notification.Link = "/Scheduler/OrderDetailEdit/" + invoice.InvoiceId;
-            notification.IsRead = false;
-            notification.Icon = "fa fa-plus-square fa-lg";
-            notification.UserId = model.ToChallengeId;
-            notification.NotificationDate = DateTime.Now;
+            for (int i = 0; i < Id.Length; i++)
+            {
+                UserChallenges userChallenge = new UserChallenges();
+                userChallenge.EventId = model.EventId;
+                userChallenge.IsActive = true;
+                userChallenge.IsAccepted = false;
+                userChallenge.UserId = Common.CurrentUser.Id;
+                userChallenge.DateCreated = DateTime.Now;
+                userChallenge.ToChallengeId = Id[i];
+                userChallengesList.Add(userChallenge);
+            }
+            _challengeService.InsertGraphRange(userChallengesList);
+            saveResult= _unitOfWork.SaveChanges();
+            for (int i = 0; i < Id.Length; i++)
+            {
+                Notifications notification = new Notifications();
+                notification.ObjectState = ObjectState.Added;
+                notification.Notification = Common.CurrentUser.Name + " Challenged you for the event " + model.EventName;
+                notification.Link = "/Events/Detail/" + model.EventId;
+                notification.IsRead = false;
+                notification.Icon = "fa fa-plus-square fa-lg";
+                notification.UserId = Id[i];
+                notification.NotificationDate = DateTime.Now;
+                notificationsList.Add(notification);
+            }
+            NotificationHub.SendNotification(Id.ToList(),  " You are challenged for event "+ model.EventName, "fa fa-plus-square fa-lg", "/Events/Detail/" + model.EventId);
+            _notificationsService.InsertGraphRange(notificationsList);
+            _unitOfWork.SaveChanges();
 
+            return RedirectToAction("Index");
+        }
+
+        public ActionResult Info(int id = 0)
+        {
+            EventsViewModels model = new EventsViewModels();
+            if (id > 0)
+            {
+                var result = _eventService.Find(id);
+                if (result.success)
+                {
+                    model = Mapper.Map<EventsViewModels>(result.data);
+                }
+            }
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Info(EventsViewModels model)
+        {
+            var challenge = _challengeService.QueryableCustom().Where(w => w.IsActive && w.ToChallengeId == Common.CurrentUser.Id && w.UserId == model.UserId).FirstOrDefault();
+            challenge.IsAccepted = true;
+            _challengeService.Update(challenge);
+            _unitOfWork.SaveChanges();
             return RedirectToAction("Index");
         }
     }
