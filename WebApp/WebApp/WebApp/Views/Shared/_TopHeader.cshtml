@@ -160,7 +160,7 @@
         // Declare a proxy to reference the hub.
         var notification = $.connection.notificationHub;
         // Create a function that the hub can call to broadcast messages.
-        notification.client.broadcastMessage = function (text,icon,link) {
+        notification.client.broadcastMessage = function (text,icon,link,image) {
             var id=@WebApp.HelperClass.Common.CurrentUser.Id;
             var audio = new Audio('/Content/notification_tune.mp3');
             audio.play();
@@ -174,7 +174,7 @@
             var val=parseInt($('#hdncount').val());
             $('#hdncount').val(val+1)
             //$('#notificationCount').text('You have '+ $('#hdncount').val() +' New notification')
-            $('#notificationList').prepend('<li class="bell-notification"><a href="'+link+'" class="media"><span class="media-left media-icon"><img class="img-circle" src="/assets/images/avatar-1.png" alt="User Image"></span><div class="media-body"><span class="block">'+text+'</span><span class="text-muted block-time">2min ago</span></div></a></li>')
+            $('#notificationList').prepend('<li class="bell-notification"><a href="'+link+'" class="media"><span class="media-left media-icon"><img class="img-circle" src="'+image+'" alt="User Image"></span><div class="media-body"><span class="block">'+text+'</span><span class="text-muted block-time">2min ago</span></div></a></li>')
             $('#count').text(val+1)
             $('#hdncount').val(val+1)
         };
@@ -200,7 +200,7 @@
                     $('#count').text(data.count)
                     var d;
                     $(data.notifications).each(function () {
-                        $('#notificationList').append('<li class="bell-notification"><a href="'+this.Link+'" class="media"><span class="media-left media-icon"><img class="img-circle" src="/assets/images/avatar-1.png" alt="User Image"></span><div class="media-body"><span class="block">'+this.Notification+'</span><span class="text-muted block-time">'+this.NotificationDateString+'</span></div></a></li>')
+                        $('#notificationList').append('<li class="bell-notification"><a href="'+this.Link+'" class="media"><span class="media-left media-icon"><img class="img-circle" src="'+this.ProfilePic+'" alt="User Image"></span><div class="media-body"><span class="block">'+this.Notification+'</span><span class="text-muted block-time">'+this.NotificationDateString+'</span></div></a></li>')
                     });
                 })
                 .fail(function() {

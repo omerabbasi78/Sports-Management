@@ -141,7 +141,7 @@ namespace WebApp.Controllers
         }
 
         [HttpPost]
-        public ActionResult Challenge(ChallengeEvent model, long[] Id)
+        public ActionResult Challenge(ChallengeEvent model)
         {
             List<UserChallenges> userChallengesList = new List<UserChallenges>();
             List<Notifications> notificationsList = new List<Notifications>();
@@ -154,7 +154,7 @@ namespace WebApp.Controllers
                 _unitOfWork.SaveChanges();
             }
             //eventid
-            for (int i = 0; i < Id.Length; i++)
+            for (int i = 0; i < model.SelectedIds.Length; i++)
             {
                 UserChallenges userChallenge = new UserChallenges();
                 userChallenge.EventId = model.EventId;
@@ -162,12 +162,12 @@ namespace WebApp.Controllers
                 userChallenge.IsAccepted = false;
                 userChallenge.UserId = Common.CurrentUser.Id;
                 userChallenge.DateCreated = DateTime.Now;
-                userChallenge.ToChallengeId = Id[i];
+                userChallenge.ToChallengeId = model.SelectedIds[i];
                 userChallengesList.Add(userChallenge);
             }
             _challengeService.InsertGraphRange(userChallengesList);
             saveResult= _unitOfWork.SaveChanges();
-            for (int i = 0; i < Id.Length; i++)
+            for (int i = 0; i < model.SelectedIds.Length; i++)
             {
                 Notifications notification = new Notifications();
                 notification.ObjectState = ObjectState.Added;
@@ -175,11 +175,12 @@ namespace WebApp.Controllers
                 notification.Link = "/Events/Detail/" + model.EventId;
                 notification.IsRead = false;
                 notification.Icon = "fa fa-plus-square fa-lg";
-                notification.UserId = Id[i];
+                notification.UserId = model.SelectedIds[i];
                 notification.NotificationDate = DateTime.Now;
+                notification.ProfilePic = Common.CurrentUser.ProfilePic==null? "/assets/images/avatar-1.png" : Common.CurrentUser.ProfilePic;
                 notificationsList.Add(notification);
             }
-            NotificationHub.SendNotification(Id.ToList(),  " You are challenged for event "+ model.EventName, "fa fa-plus-square fa-lg", "/Events/Detail/" + model.EventId);
+            NotificationHub.SendNotification(model.SelectedIds.ToList(),  " You are challenged for event "+ model.EventName, "fa fa-plus-square fa-lg", "/Events/Detail/" + model.EventId, Common.CurrentUser.ProfilePic == null ? "/assets/images/avatar-1.png" : Common.CurrentUser.ProfilePic);
             _notificationsService.InsertGraphRange(notificationsList);
             _unitOfWork.SaveChanges();
 

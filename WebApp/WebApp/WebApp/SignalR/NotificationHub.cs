@@ -11,11 +11,11 @@ namespace WebApp.SignalR
     public class NotificationHub : Hub
     {
         static List<UserConnection> uList = new List<UserConnection>();
-        public static void SendNotification(List<long> users,string text, string icon, string url)
+        public static void SendNotification(List<long> users,string text, string icon, string url,string image)
         {
             var context = GlobalHost.ConnectionManager.GetHubContext<NotificationHub>();
             List<string> usersList = uList.Where(w => users.Contains(w.UserId)).Select(s => s.ConnectionID).ToList();
-            context.Clients.Clients(usersList).broadcastMessage(text, icon, url);
+            context.Clients.Clients(usersList).broadcastMessage(text, icon, url, image);
         }
 
         public override Task OnConnected()

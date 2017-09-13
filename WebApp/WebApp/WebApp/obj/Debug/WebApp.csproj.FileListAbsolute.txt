@@ -664,3 +664,18 @@ C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.Applica
 C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.TelemetryCorrelation.xml
 C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\Rizwan\Desktop\GITHUB\Sports\WebApp\WebApp\WebApp\obj\Debug\WebApp.csprojResolveAssemblyReference.cache
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.DependencyCollector.dll
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.PerfCounterCollector.dll
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.ServerTelemetryChannel.dll
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.Web.dll
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.WindowsServer.dll
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.ApplicationInsights.dll
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.TelemetryCorrelation.dll
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\System.Diagnostics.DiagnosticSource.dll
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.DependencyCollector.xml
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.ServerTelemetryChannel.xml
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.Web.xml
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AI.WindowsServer.xml
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.ApplicationInsights.xml
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\Microsoft.AspNet.TelemetryCorrelation.xml
+D:\Github Projects\Sports\WebApp\WebApp\WebApp\bin\System.Diagnostics.DiagnosticSource.xml

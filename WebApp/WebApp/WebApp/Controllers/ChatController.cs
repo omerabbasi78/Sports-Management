@@ -39,8 +39,9 @@ namespace WebApp.Controllers
                     User = s.Users,
                     NotificationDate = s.NotificationDate,
                     NotificationDateString = s.NotificationDate.ToShortDateString(),
-                    UserId = s.UserId
-                }).OrderByDescending(o => o.NotificationId).ToList();
+                    UserId = s.UserId,
+                    ProfilePic=s.ProfilePic
+                }).OrderByDescending(o => o.NotificationId).Take(15).ToList();
                 return Json(new { success = true, notifications = notifications, count = notifications.Where(w => w.IsRead == false && w.NotificationDate.Date == DateTime.Now.Date).Count() }, JsonRequestBehavior.AllowGet);
             }
             return View();

@@ -69,6 +69,7 @@ namespace WebApp.ViewModels
         public long ToChallengeId { get; set; }
         public IEnumerable<Users> ToChallengeList { get; set; }
         public IEnumerable<ToChallenge> ToSelectedChallengesList { get; set; }
+        public long[] SelectedIds { get; set; }
     }
 
 

@@ -21,5 +21,6 @@ namespace WebApp.Models
         public bool IsRead { get; set; }
         public DateTime NotificationDate { get; set; }
         public string Icon { get; set; }
+        public string ProfilePic { get; set; }
     }
 }
